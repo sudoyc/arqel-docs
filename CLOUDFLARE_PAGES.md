@@ -1,20 +1,57 @@
-# Cloudflare Pages
+# Cloudflare Deployment
 
-## Project Settings
+The active Cloudflare project for this repository is currently a Workers project named `arqel-docs`, not a Cloudflare Pages project.
 
-Connect this GitHub repository to Cloudflare Pages:
+## Current: Cloudflare Workers static assets
+
+This repository builds a static VitePress site and deploys the generated assets through Workers static assets.
+
+Cloudflare Workers build settings:
 
 ```text
-Repository: sudoyc/arqel-docs
+Install command: pnpm install
+Build command: pnpm run build
+Deploy command: pnpm run deploy
+```
+
+The deploy script runs:
+
+```bash
+wrangler deploy
+```
+
+`wrangler.toml` points Workers assets at:
+
+```text
+docs/.vitepress/dist
+```
+
+## Local verification
+
+Before pushing changes that affect deployment:
+
+```bash
+pnpm install
+pnpm run build
+pnpm exec wrangler deploy --dry-run
+```
+
+## Optional: Cloudflare Pages instead
+
+If this site is later recreated as a Cloudflare Pages project, use these settings:
+
+```text
 Framework preset: None, or VitePress if available
 Install command: pnpm install
 Build command: pnpm run build
 Build output directory: docs/.vitepress/dist
 ```
 
-## Custom Domain
+Cloudflare Pages does not need `wrangler.toml` or a deploy command. The current Workers project does need `wrangler.toml` and `pnpm run deploy`.
 
-Configure the custom domain in Cloudflare Pages:
+## Custom domain
+
+The intended docs domain is:
 
 ```text
 docs.arqel.net
@@ -31,32 +68,3 @@ Its content is:
 ```text
 docs.arqel.net
 ```
-
-Cloudflare Pages does not require a `wrangler.json` for this static VitePress site.
-
-## Local Verification
-
-Before changing Pages settings or pushing docs changes:
-
-```bash
-pnpm install
-pnpm run build
-```
-
-Optional local preview:
-
-```bash
-pnpm run preview
-```
-
-Then open the URL printed by VitePress, usually:
-
-```text
-http://127.0.0.1:4173
-```
-
-## Notes
-
-- The old Cloudflare Workers React/Vite template files were removed during migration.
-- This site should be deployed as static output from VitePress, not as a Worker application.
-- Do not commit `docs/.vitepress/dist` or `docs/.vitepress/cache`.

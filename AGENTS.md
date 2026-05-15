@@ -10,7 +10,7 @@ This repository contains the standalone Arqel documentation site for `docs.arqel
 - VitePress config: `docs/.vitepress/config.ts`
 - Theme files: `docs/.vitepress/theme/`
 - Build output: `docs/.vitepress/dist`
-- Hosting target: Cloudflare Pages
+- Hosting target: Cloudflare Workers static assets (current), with Cloudflare Pages as an optional future target
 
 ## Commands
 
@@ -23,7 +23,17 @@ pnpm run build
 pnpm run preview
 ```
 
-Cloudflare Pages should use:
+Cloudflare Workers should use:
+
+```text
+Install command: pnpm install
+Build command: pnpm run build
+Deploy command: pnpm run deploy
+```
+
+The deploy script uses `wrangler deploy` and the static assets config in `wrangler.toml`.
+
+If the project is recreated as Cloudflare Pages later, Pages should use:
 
 ```text
 Install command: pnpm install
