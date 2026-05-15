@@ -1,90 +1,46 @@
-# React + Vite + Hono + Cloudflare Workers
+# Arqel Docs
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/vite-react-template)
-
-This template provides a minimal setup for building a React application with TypeScript and Vite, designed to run on Cloudflare Workers. It features hot module replacement, ESLint integration, and the flexibility of Workers deployments.
-
-![React + TypeScript + Vite + Cloudflare Workers](https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/fc7b4b62-442b-4769-641b-ad4422d74300/public)
-
-<!-- dash-content-start -->
-
-🚀 Supercharge your web development with this powerful stack:
-
-- [**React**](https://react.dev/) - A modern UI library for building interactive interfaces
-- [**Vite**](https://vite.dev/) - Lightning-fast build tooling and development server
-- [**Hono**](https://hono.dev/) - Ultralight, modern backend framework
-- [**Cloudflare Workers**](https://developers.cloudflare.com/workers/) - Edge computing platform for global deployment
-
-### ✨ Key Features
-
-- 🔥 Hot Module Replacement (HMR) for rapid development
-- 📦 TypeScript support out of the box
-- 🛠️ ESLint configuration included
-- ⚡ Zero-config deployment to Cloudflare's global network
-- 🎯 API routes with Hono's elegant routing
-- 🔄 Full-stack development setup
-- 🔎 Built-in Observability to monitor your Worker
-
-Get started in minutes with local development or deploy directly via the Cloudflare dashboard. Perfect for building modern, performant web applications at the edge.
-
-<!-- dash-content-end -->
-
-## Getting Started
-
-To start a new project with this template, run:
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/vite-react-template
-```
-
-A live deployment of this template is available at:
-[https://react-vite-template.templates.workers.dev](https://react-vite-template.templates.workers.dev)
+This repository contains the VitePress documentation site for `docs.arqel.net`.
 
 ## Development
 
-Install dependencies:
-
 ```bash
-npm install
+pnpm install
+pnpm run dev
 ```
 
-Start the development server with:
+Local dev server:
 
-```bash
-npm run dev
+```text
+http://127.0.0.1:5173
 ```
 
-Your application will be available at [http://localhost:5173](http://localhost:5173).
-
-## Production
-
-Build your project for production:
+## Build
 
 ```bash
-npm run build
+pnpm run build
 ```
 
-Preview your build locally:
+## Preview
 
 ```bash
-npm run preview
+pnpm run preview
 ```
 
-Deploy your project to Cloudflare Workers:
+## Deployment target
 
-```bash
-npm run build && npm run deploy
-```
+- Domain: `docs.arqel.net`
+- Build command: `pnpm run build`
+- Build output: `docs/.vitepress/dist`
 
-Monitor your workers:
+## Cloudflare Pages
 
-```bash
-npx wrangler tail
-```
+Create a Cloudflare Pages project connected to this repository:
 
-## Additional Resources
+- Framework preset: `None` or `VitePress` if available
+- Install command: `pnpm install`
+- Build command: `pnpm run build`
+- Output directory: `docs/.vitepress/dist`
+- Production branch: configure in Cloudflare Pages according to the repository default branch
 
-- [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Documentation](https://reactjs.org/)
-- [Hono Documentation](https://hono.dev/)
+Custom domain `docs.arqel.net` should be configured in Cloudflare Pages. The repository also includes `docs/public/CNAME` for hosts that read static CNAME files.
