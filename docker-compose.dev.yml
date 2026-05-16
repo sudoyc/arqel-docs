@@ -1,0 +1,32 @@
+services:
+  docs:
+    image: node:24-alpine
+    container_name: arqel-docs-hot-dev
+    working_dir: /app
+    command: >
+      sh -c '
+        corepack enable &&
+        corepack prepare pnpm@9.15.4 --activate &&
+        pnpm install --frozen-lockfile --store-dir /pnpm/store &&
+        pnpm run dev -- --port ${DOCS_DEV_PORT:-5173}
+      '
+    ports:
+      - "${DOCS_DEV_BIND_HOST:-127.0.0.1}:${DOCS_DEV_PORT:-5173}:${DOCS_DEV_PORT:-5173}"
+    environment:
+      - CI=true
+      - CHOKIDAR_USEPOLLING=${CHOKIDAR_USEPOLLING:-true}
+      - WATCHPACK_POLLING=${WATCHPACK_POLLING:-true}
+    volumes:
+      - .:/app
+      - docs_node_modules:/app/node_modules
+      - docs_pnpm_store:/pnpm/store
+    networks:
+      - docs-dev
+
+networks:
+  docs-dev:
+    driver: bridge
+
+volumes:
+  docs_node_modules:
+  docs_pnpm_store:

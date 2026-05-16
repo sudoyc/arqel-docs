@@ -10,12 +10,16 @@ API Key 一旦泄露，别人可能会用你的额度发起请求。不要把完
 
 ## 1. 登录控制台
 
-1. 打开 Arqel 网站。
+1. 打开 Arqel 控制台（以当前产品入口为准）。
 2. 点击登录。
 3. 登录后进入用户控制台。
-4. 找到 API Key、令牌、密钥或类似名称的页面。
+4. 找到 `API Key`、`Keys`、`Developer settings`、`令牌` 或 `密钥` 一类页面。
 
 不同版本界面名称可能略有变化，但你要找的是“创建一个可用于 API 调用的 Key”。
+
+::: details 图片占位：Arqel 控制台 API Key 页面
+这里需要一张 Arqel 控制台截图，标出 API Key / Keys / Developer settings 入口和“创建 Key”按钮。截图中不要包含完整 API Key。
+:::
 
 ## 2. 创建一个新的 Key
 
@@ -36,6 +40,8 @@ API Key 一旦泄露，别人可能会用你的额度发起请求。不要把完
 ## 3. 复制 Key
 
 创建后通常只会显示一次完整 Key。请立即复制，并放到安全位置。
+
+复制后可以用 [API 请求测试](/getting-started/api/first-request) 验证 Key 是否可用。不要把完整 Key 粘贴到共享文档、群聊或截图里。
 
 安全位置可以是：
 

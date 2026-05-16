@@ -37,6 +37,8 @@
 
 ::: warning
 模型名必须填写 Arqel 控制台里可用的具体名称。不要使用不存在的模型名、其他平台别名或文档中的占位文字。
+
+CC Switch 可以管理 Provider 和路由配置，但不代表 Arqel 自动兼容所有 Agent 协议。保存后请逐个 Agent 做只读测试，并回到 Arqel 控制台核对请求记录。
 :::
 
 ::: details 图片占位：新增 Provider 表单

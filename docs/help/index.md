@@ -123,7 +123,7 @@ $ARQEL_BASE_URL/chat/completions
 
 ### Codex 为什么配置方式变化？
 
-Codex 有 CLI、App、IDE Extension、Web/cloud 等 surface。认证和 Provider 配置会随 surface 与版本变化；终端用户可同时查看 `codex --help`。
+Codex 有 CLI、App、IDE Extension、Web/cloud 等产品入口。认证和 Provider 配置会随产品入口与版本变化；终端用户可同时查看 `codex --help`。
 
 ## 请求失败
 
@@ -133,7 +133,7 @@ Codex 有 CLI、App、IDE Extension、Web/cloud 等 surface。认证和 Provider
 
 ### 返回 401 怎么办？
 
-通常是 Key 无效或请求头格式错误。确认 `Authorization: Bearer <你的 Key>` 是否正确。
+通常是 Key 无效或请求头格式错误。确认 `Authorization: Bearer <你的 API Key>` 是否正确。
 
 ### 返回 429 怎么办？
 

@@ -4,8 +4,8 @@ Cursor 适合在编辑器里直接使用 AI 辅助写代码。它本质上是一
 
 Cursor 和命令行 Agent 不完全一样。它主要是编辑器应用，配置入口通常在设置界面里，而不是终端配置文件。即使你在 Cursor 的 integrated terminal 里运行了某个 CLI，也不代表 Cursor 自己的模型设置会读取那份 CLI 配置。
 
-::: info Version note
-Last verified: 2026-05-15. These tools change quickly. UI and configuration keys may differ by version. Always check the current official documentation when behavior differs.
+::: info 版本说明
+最后核对时间：2026-05-15。第三方工具变化很快，界面和配置键可能随版本变化；如果行为不同，请以当前官方文档为准。
 :::
 
 ::: details 图片占位：Cursor 设置入口

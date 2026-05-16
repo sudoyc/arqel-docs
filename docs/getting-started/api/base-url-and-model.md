@@ -19,6 +19,16 @@ https://api.arqel.dev/v1
 - 不要把 `/chat/completions` 当成 Base URL 的一部分，除非控制台明确这样写。
 - 如果控制台显示的地址和文档示例不同，以控制台为准。
 
+可以把它理解成：
+
+| 名称 | 示例 | 用途 |
+| --- | --- | --- |
+| Base URL | `https://api.arqel.dev/v1` | API 根地址，填到 SDK 或工具的 Base URL 字段 |
+| 请求路径 | `/chat/completions` | 聊天补全接口路径 |
+| 完整请求地址 | `https://api.arqel.dev/v1/chat/completions` | cURL 手动请求时会用到 |
+
+常见错误是重复写 `/v1`，或者把完整请求地址填进只需要 Base URL 的工具字段里。
+
 ::: details 图片占位：Arqel 控制台 Base URL 位置
 这里需要一张 Arqel 控制台截图，框出 Base URL 所在位置。截图中不要包含完整 API Key。
 :::
@@ -28,6 +38,8 @@ https://api.arqel.dev/v1
 请在 Arqel 控制台的模型列表、模型管理或请求示例区域查找可用模型名。
 
 你要复制的是“请求中使用的模型名”，不是页面上的营销名称或分组标题。
+
+有些界面也会把它叫做 `model`、`model id`、`模型 ID` 或“请求模型名”。如果控制台提供请求示例，优先复制示例 JSON 里的 `model` 字段。
 
 ::: details 图片占位：Arqel 控制台模型列表位置
 这里需要一张 Arqel 控制台模型列表截图，标注“可复制的真实模型名”和“仅用于展示的显示名称”。
@@ -78,12 +90,12 @@ https://api.arqel.dev/v1
 
 ```json
 {
-  "model": "请替换为控制台里复制的具体模型名"
+  "model": "<从 Arqel 控制台复制的模型名>"
 }
 ```
 
 ## 下一步
 
-- [发送第一条请求](/getting-started/api/first-request)
+- [API 请求测试](/getting-started/api/first-request)
 - [成功和失败示例](/getting-started/troubleshooting/success-and-failure-examples)
 - [模型选择](/concepts/models-and-routing)

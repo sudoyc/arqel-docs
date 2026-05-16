@@ -1,22 +1,18 @@
-# CC Switch 使用教程
+# CC Switch 参考
 
 CC Switch 是一个跨平台桌面工具，用来统一管理 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw、Hermes Agent 等 Agent 工具的 Provider、MCP、Prompts 和 Skills。
 
-如果你只使用一个工具，可以先手动配置，先理解这个工具自己的配置方式。如果你会同时使用多个 Agent，推荐尽早使用 CC Switch，避免反复手改配置文件，也方便统一排查哪个 Provider 正在生效。
+如果你主要是 Windows 工具用户，建议直接从 [Windows + CC Switch 教程](/getting-started/windows-ccswitch) 开始。本文作为 CC Switch 的补充参考。
 
-::: info Version note
-Last verified: 2026-05-15. These tools change quickly. UI and configuration keys may differ by version. Always check the current official documentation when behavior differs.
+::: info 版本说明
+最后核对时间：2026-05-15。第三方工具变化很快，界面和配置键可能随版本变化；如果行为不同，请以当前官方文档为准。
 :::
 
-::: tip 适合谁
-这篇总览适合已经完成 [环境准备](/setup/) 和 [创建 API Key](/getting-started/api/api-key) 的用户。如果你还不知道 API Key 和 Base URL 是什么，先读入门教程。
-:::
+## 推荐路径
 
-## 最短成功路径
-
-1. 先看 [CC Switch 安装](/tools/cc-switch/install)。
-2. 再看 [CC Switch 添加 Arqel Provider](/tools/cc-switch/provider)。
-3. 然后看 [CC Switch 应用于各 Agent](/tools/cc-switch/agents)。
+1. Windows 用户先看 [Windows + CC Switch 教程](/getting-started/windows-ccswitch)。
+2. 需要字段细节时看 [添加 Arqel Provider](/tools/cc-switch/provider)。
+3. 需要按工具检查时看 [应用于各 Agent](/tools/cc-switch/agents)。
 4. 出问题时看 [CC Switch FAQ](/tools/cc-switch/faq)。
 
 ## 你需要准备什么
@@ -36,9 +32,9 @@ CC Switch 不是模型服务，也不是 Arqel 的替代品。它只是帮你把
 | 同时用 Claude Code、Gemini CLI、Codex | 适合使用 CC Switch 统一管理 Provider |
 | 经常切换官方 Provider 和 Arqel Provider | 适合使用 CC Switch，减少手改配置 |
 | 需要管理 MCP、Prompts、Skills | 适合使用 CC Switch |
-| 还没跑通 Arqel 第一条请求 | 先不要接 CC Switch，先完成 [发送第一条请求](/getting-started/api/first-request) |
+| Windows 工具用户 | 直接看 [Windows + CC Switch 教程](/getting-started/windows-ccswitch) |
 
-## 官方支持的应用
+## CC Switch managed apps
 
 根据 CC Switch README 和 release notes，CC Switch 覆盖这些 managed apps：
 
@@ -49,7 +45,7 @@ CC Switch 不是模型服务，也不是 Arqel 的替代品。它只是帮你把
 - OpenClaw
 - Hermes Agent
 
-Arqel 文档目前优先整理 Claude Code、Gemini CLI、Codex、Hermes Agent。OpenCode 和 OpenClaw 是否需要单独 Arqel 教程，仍需进一步确认。
+Arqel 文档目前优先整理 Claude Code、Gemini CLI、Codex、Hermes Agent。这里的 managed app 只表示 CC Switch 可以管理相关配置，不代表 Arqel 已验证每个 Agent 的协议兼容。
 
 ## 主要能力
 
@@ -67,7 +63,7 @@ CC Switch 官方文档和 README 提到的能力包括：
 
 这些能力说明 CC Switch 不只是“写配置文件”的工具。但 Arqel 文档仍不能据此承诺所有 Agent、协议和模型都已经通过 Arqel 实测。
 
-## 接入 Arqel 的推荐流程
+## 接入 Arqel 的参考流程
 
 1. 先在 Arqel 控制台创建一个专门给 CC Switch 用的 Key。
 2. 记录控制台里的 Base URL。

@@ -4,12 +4,20 @@
 
 如果你几乎没有编程基础，不用担心。你可以把本章理解成“先把电脑准备好”，后面才能顺利使用 AI 工具和 Arqel API。
 
-## 你会安装什么
+## API 测试需要什么
 
-最低需要这些东西：
+如果你只是想先发送第一条 Arqel API 请求，最低只需要：
 
-- **浏览器**：登录 Arqel 控制台、复制 API Key、查看文档。
-- **终端**：输入命令的地方。macOS 叫“终端”，Windows 推荐 “Windows Terminal” 或 PowerShell。
+- **浏览器**：登录 Arqel 控制台、复制 API Key、Base URL 和模型名。
+- **终端**：输入 cURL 命令。macOS 叫“终端”，Windows 推荐 Windows Terminal 或 PowerShell。
+- **cURL**：发送网络请求。macOS、Linux 和 Windows 10/11 通常已经自带。
+
+Git、Node.js、npm、VS Code 对 SDK、Agent 和项目开发很有用，但不是第一条 cURL 请求的前置条件。
+
+## 接 SDK / Agent 时会安装什么
+
+接入 SDK、CLI Agent 或编辑项目时，通常还会用到：
+
 - **Node.js**：很多 AI 命令行工具依赖它运行。
 - **npm**：Node.js 自带的软件包安装器，一些 AI CLI 会用它安装，例如 Gemini CLI 或 Codex CLI。
 - **Git**：代码版本管理工具，用来查看修改、回滚、提交。
@@ -41,13 +49,11 @@
 
 ## 推荐安装顺序
 
-1. 安装 Git。
-2. 安装 Node.js，建议 Node 20+，更推荐 Node 22。
-3. 安装 VS Code。
-4. 验证 `node`、`npm`、`git` 命令可用。
-5. 创建 Arqel API Key。
-6. 用 cURL 或 OpenAI SDK 发送第一条请求。
-7. 再安装 Claude Code、Gemini CLI、Codex 等 Agent 工具。不同产品可能使用官方安装脚本、Homebrew、WinGet、npm 或二进制包。
+1. 先创建 Arqel API Key，复制 Base URL 和模型名。
+2. 用 API 测试确认 Key、Base URL 和模型名可用。
+3. 如果要接 SDK 或 Agent，再安装 Git、Node.js、VS Code 等开发工具。
+4. 验证 `node`、`npm`、`git` 等命令可用。
+5. 再安装 Claude Code、Gemini CLI、Codex 等 Agent 工具。不同产品可能使用官方安装脚本、Homebrew、WinGet、npm 或二进制包。
 
 ## 每一步怎么判断成功
 
@@ -65,7 +71,7 @@
 
 如果提示“命令找不到”，通常不是你输错了，而是软件没有安装好，或者安装后的路径还没有被终端识别。先关闭终端重新打开，再验证一次。
 
-## 为什么先跑通 API，再折腾 Agent
+## 为什么要保留 API 测试页
 
 Agent 工具本身有配置、权限、模型、MCP、插件等复杂度。如果你还没确认 API Key 和 Base URL 可用，排查问题会很混乱。
 

@@ -72,15 +72,15 @@ PS C:\Users\you>
 macOS / Linux / WSL 通常用反斜杠 `\` 表示下一行仍属于同一条命令：
 
 ```bash
-curl "$ARQEL_BASE_URL/chat/completions" \
-  -H "Authorization: Bearer $ARQEL_API_KEY"
+echo "第一行" \
+  && echo "第二行"
 ```
 
 Windows PowerShell 通常用反引号 `` ` ``：
 
 ```powershell
-curl.exe "$env:ARQEL_BASE_URL/chat/completions" `
-  -H "Authorization: Bearer $env:ARQEL_API_KEY"
+Write-Output "第一行" `
+  "第二行"
 ```
 
 注意：PowerShell 的反引号后面不要加空格。

@@ -1,4 +1,4 @@
-# 发送第一条请求
+# API 请求测试
 
 下面示例使用 OpenAI-compatible 的请求方式。实际 Base URL 和模型名以你的 Arqel 控制台为准。
 
@@ -27,6 +27,7 @@
 
 - [环境准备总览](/setup/)
 - [创建 API Key](/getting-started/api/api-key)
+- [Base URL 和模型名](/getting-started/api/base-url-and-model)
 
 ## 1. 设置环境变量
 
@@ -76,6 +77,7 @@ macOS / Linux / WSL：
 curl "$ARQEL_BASE_URL/chat/completions" \
   -H "Authorization: Bearer $ARQEL_API_KEY" \
   -H "Content-Type: application/json" \
+  -w "\nHTTP %{http_code}\n" \
   -d '{
     "model": "'"$ARQEL_MODEL"'",
     "messages": [
@@ -100,6 +102,7 @@ $body = @{
 curl.exe "$env:ARQEL_BASE_URL/chat/completions" `
   -H "Authorization: Bearer $env:ARQEL_API_KEY" `
   -H "Content-Type: application/json" `
+  -w "`nHTTP %{http_code}`n" `
   -d $body
 ```
 
@@ -155,7 +158,7 @@ Authorization: Bearer <你的 API Key>
 
 ## 成功后应该看到什么
 
-- HTTP 状态码是 `200`。
+- 终端最后一行显示 `HTTP 200`。
 - 返回内容里有模型回复。
 - 控制台中可以看到这次调用的消耗或记录。
 
@@ -164,6 +167,19 @@ Authorization: Bearer <你的 API Key>
 - 没有出现 `401`、`403`、`429`、`500` 等错误码。
 - 返回里有 `choices` 或类似字段。
 - `message.content` 或类似字段里有文字回复。
+
+## 怎么确认真的走了 Arqel
+
+终端有回复还不够。建议回到 Arqel 控制台，查看用量或请求记录。如果控制台提供这些字段，请核对：
+
+- 请求时间是否和刚才测试一致。
+- Key 名称是否是你刚创建或专门用于测试的 Key。
+- 模型名是否和 `ARQEL_MODEL` 一致。
+- 状态码或结果是否显示成功。
+
+::: details 图片占位：Arqel 控制台请求记录
+这里需要一张 Arqel 控制台请求记录或用量页面截图，标出请求时间、Key 名称、模型名和状态。截图中不要包含完整 API Key 或私有提示词。
+:::
 
 ## 如果失败
 

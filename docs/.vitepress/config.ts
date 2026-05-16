@@ -14,28 +14,30 @@ export default defineConfig({
     logo: '/favicon.svg',
     siteTitle: 'Arqel Docs',
     nav: [
-      { text: '入门', link: '/getting-started/' },
+      { text: '快速教程', link: '/getting-started/windows-ccswitch' },
+      { text: 'API 参考', link: '/api/' },
       { text: '工具接入', link: '/tools/' },
       { text: '概念', link: '/concepts/' },
-      { text: '常见帮助', link: '/help/' }
+      { text: '帮助与安全', link: '/help/' }
     ],
     sidebar: [
       {
-        text: '入门教程',
+        text: '快速教程',
         collapsed: false,
         items: [
-          { text: '总览', link: '/getting-started/' },
+          { text: 'Windows + CC Switch', link: '/getting-started/windows-ccswitch' },
+          { text: '入口总览', link: '/getting-started/' },
           {
-            text: '基础知识',
+            text: '准备知识',
             collapsed: true,
             items: [
-              { text: '选择入门路径', link: '/getting-started/basics/choose-path' },
+              { text: '按目标选择', link: '/getting-started/basics/choose-path' },
               { text: '基础概念', link: '/getting-started/basics/basic-concepts' },
               { text: '词汇表', link: '/getting-started/basics/glossary' }
             ]
           },
           {
-            text: 'API 入门',
+            text: '参考：API 调用',
             collapsed: true,
             items: [
               { text: '创建 API Key', link: '/getting-started/api/api-key' },
@@ -44,7 +46,7 @@ export default defineConfig({
             ]
           },
           {
-            text: '排障与检查',
+            text: '参考：验证与排障',
             collapsed: true,
             items: [
               { text: '成功和失败示例', link: '/getting-started/troubleshooting/success-and-failure-examples' },
@@ -52,10 +54,10 @@ export default defineConfig({
             ]
           },
           {
-            text: '环境准备',
+            text: '参考：电脑环境',
             collapsed: true,
             items: [
-              { text: '总览', link: '/setup/' },
+              { text: '环境总览', link: '/setup/' },
               { text: '终端基础', link: '/setup/terminal-basics' },
               { text: 'Windows 环境选择', link: '/setup/which-environment' },
               { text: 'macOS', link: '/setup/macos' },
@@ -67,15 +69,24 @@ export default defineConfig({
         ]
       },
       {
+        text: 'API 参考',
+        collapsed: true,
+        items: [
+          { text: 'API 入口', link: '/api/' },
+          { text: '鉴权', link: '/api/authentication' },
+          { text: 'Chat Completions', link: '/api/chat-completions' }
+        ]
+      },
+      {
         text: '工具接入',
         collapsed: false,
         items: [
-          { text: '总览', link: '/tools/' },
+          { text: '选择接入方式', link: '/tools/' },
           {
-            text: 'Agents',
+            text: 'Agent 工具',
             collapsed: true,
             items: [
-              { text: '总览', link: '/tools/agents/' },
+              { text: 'Agent 总览', link: '/tools/agents/' },
               { text: '工具对比', link: '/tools/agents/compare' },
               { text: 'Cursor', link: '/tools/agents/cursor' },
               { text: 'Claude Code', link: '/tools/agents/claude-code' },
@@ -88,7 +99,7 @@ export default defineConfig({
             text: 'SDK',
             collapsed: true,
             items: [
-              { text: '总览', link: '/tools/sdk/' },
+              { text: 'SDK 总览', link: '/tools/sdk/' },
               { text: 'OpenAI SDK', link: '/tools/sdk/openai' }
             ]
           },
@@ -96,7 +107,7 @@ export default defineConfig({
             text: 'CC Switch',
             collapsed: true,
             items: [
-              { text: '总览', link: '/tools/cc-switch/' },
+              { text: 'CC Switch 总览', link: '/tools/cc-switch/' },
               { text: '安装', link: '/tools/cc-switch/install' },
               { text: '添加 Arqel Provider', link: '/tools/cc-switch/provider' },
               { text: '应用于各 Agent', link: '/tools/cc-switch/agents' },
@@ -106,10 +117,10 @@ export default defineConfig({
         ]
       },
       {
-        text: '概念梳理',
+        text: '概念',
         collapsed: false,
         items: [
-          { text: '核心概念', link: '/concepts/' },
+          { text: '概念总览', link: '/concepts/' },
           { text: 'Base URL', link: '/concepts/base-url' },
           { text: 'MCP 安全', link: '/concepts/mcp-security' },
           { text: '模型选择', link: '/concepts/models-and-routing' },
@@ -117,10 +128,10 @@ export default defineConfig({
         ]
       },
       {
-        text: '常见帮助',
+        text: '帮助',
         collapsed: false,
         items: [
-          { text: 'FAQ', link: '/help/' },
+          { text: '常见问题', link: '/help/' },
           {
             text: '安全',
             collapsed: true,
@@ -136,15 +147,6 @@ export default defineConfig({
               { text: '错误码', link: '/help/troubleshooting/errors' }
             ]
           }
-        ]
-      },
-      {
-        text: 'API 参考',
-        collapsed: true,
-        items: [
-          { text: 'API 总览', link: '/api/' },
-          { text: '鉴权', link: '/api/authentication' },
-          { text: 'Chat Completions', link: '/api/chat-completions' }
         ]
       }
     ],

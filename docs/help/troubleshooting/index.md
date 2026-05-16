@@ -7,7 +7,9 @@
 - Key 是否完整复制。
 - 是否带了多余空格。
 - 是否已经删除或失效。
-- 请求头是否是 `Authorization: Bearer sk-...`。
+- 请求头是否是 `Authorization: Bearer <你的 API Key>`。
+
+不要把完整 API Key 发给支持、贴到聊天软件，或出现在截图里。
 
 ## 2. 检查 Base URL
 
