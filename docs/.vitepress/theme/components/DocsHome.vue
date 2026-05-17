@@ -1,45 +1,45 @@
 <script setup lang="ts">
 const guideLinks = [
   {
-    title: 'Windows + CC Switch',
-    detail: '最快接入 Claude Code、Gemini CLI、Codex 等工具。',
-    href: '/getting-started/windows-ccswitch'
+    title: 'API 参考',
+    detail: '查看鉴权、Base URL、Chat Completions 和能力边界。',
+    href: '/api/'
   },
   {
-    title: 'Tools',
-    detail: '查看 Cursor、Agent、SDK、CC Switch 的配置差异。',
+    title: '工具接入',
+    detail: '按 Cursor、Claude Code、Gemini CLI、Codex 或 Hermes Agent 进入对应页面。',
     href: '/tools/'
   },
   {
-    title: 'CC Switch Provider',
-    detail: '把 Arqel API Key、Base URL、模型名填进 CC Switch。',
-    href: '/tools/cc-switch/provider'
+    title: '按目标选择',
+    detail: '不确定先看哪里时，从接入目标反推文档路径。',
+    href: '/getting-started/basics/choose-path'
   },
   {
-    title: 'API / SDK',
-    detail: '后端服务或脚本接入时查看接口说明。',
-    href: '/api/'
+    title: '基础概念',
+    detail: '新手用户先了解 API Key、Base URL、模型名和 Provider。',
+    href: '/getting-started/basics/basic-concepts'
   }
 ]
 
 const entryCards = [
   {
-    label: 'Guide',
-    title: 'Windows 快速接入',
-    detail: '用 CC Switch 统一配置 Arqel，再接入主流 Agent 工具。',
-    href: '/getting-started/windows-ccswitch'
+    label: 'API',
+    title: 'API 参考',
+    detail: '给后端、脚本和 SDK 用户查鉴权、请求格式和错误处理。',
+    href: '/api/'
   },
   {
     label: 'Tools',
-    title: '工具参考',
-    detail: '按产品入口区分 Cursor、Claude Code、Gemini CLI、Codex。',
+    title: '工具接入',
+    detail: '按产品入口区分 Cursor、Claude Code、Gemini CLI、Codex 和 CC Switch。',
     href: '/tools/'
   },
   {
-    label: 'API',
-    title: 'API 参考',
-    detail: '给后端、脚本和 SDK 用户查鉴权与请求格式。',
-    href: '/api/'
+    label: 'Guide',
+    title: '新手路径',
+    detail: '从基础概念、电脑环境和控制台三件套开始。',
+    href: '/getting-started/'
   }
 ]
 </script>
@@ -50,29 +50,29 @@ const entryCards = [
       <div class="docs-home-copy">
         <p class="docs-home-kicker docs-home-reveal">Arqel Docs</p>
         <h1 id="docs-home-title" class="docs-home-title docs-home-reveal docs-home-d2">
-          用工具接入 Arqel
+          接入 Arqel
         </h1>
         <p class="docs-home-subtitle docs-home-reveal docs-home-d3">
-          从 Windows + CC Switch 开始配置主流 Agent
+          面向 API、SDK、工具和 CC Switch 的技术接入文档
         </p>
         <p class="docs-home-description docs-home-reveal docs-home-d4">
-          先把 Arqel Provider 配进 CC Switch，再接入 Claude Code、Gemini CLI、Codex、Cursor 或 SDK。API 和概念说明作为参考资料保留。
+          先按场景选择 API 参考、工具接入、基础概念或排障页，再进入对应教程。新手用户可以从基础概念和环境准备开始。
         </p>
         <div class="docs-home-actions docs-home-reveal docs-home-d5">
-          <a class="docs-home-button docs-home-button-primary" href="/getting-started/windows-ccswitch">
-            Windows 快速接入
+          <a class="docs-home-button docs-home-button-primary" href="/api/">
+            API 参考
             <span aria-hidden="true">→</span>
           </a>
           <a class="docs-home-button docs-home-button-secondary" href="/tools/">
-            工具文档
+            工具接入
           </a>
         </div>
       </div>
 
       <aside class="docs-home-guide-card docs-home-reveal docs-home-d3" aria-labelledby="docs-home-guide-title">
         <div class="docs-home-guide-header">
-          <h2 id="docs-home-guide-title">按用途进入</h2>
-          <p>教程和参考分开：先接工具，需要时再查 API。</p>
+          <h2 id="docs-home-guide-title">接入入口</h2>
+          <p>按 API、工具或新手路径进入。</p>
         </div>
         <div class="docs-home-guide-list">
           <a
@@ -106,7 +106,7 @@ const entryCards = [
     </section>
 
     <p class="docs-home-note docs-home-reveal docs-home-d8">
-      工具有回复后，仍以 Arqel 控制台请求记录确认是否真正接入。
+      请求时复制控制台显示的具体模型名；工具有回复后，仍以 Arqel 控制台请求记录确认是否真正接入。
     </p>
   </div>
 </template>

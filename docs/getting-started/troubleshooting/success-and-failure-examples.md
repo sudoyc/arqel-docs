@@ -88,7 +88,7 @@
 处理方式：
 
 1. 重新复制 Base URL。
-2. 对照 [API 请求测试](/getting-started/api/first-request) 检查请求路径。
+2. 对照 [API 调用示例](/getting-started/api/first-request) 检查请求路径。
 3. 重新从控制台复制模型名。
 
 ## 429：额度或速率限制

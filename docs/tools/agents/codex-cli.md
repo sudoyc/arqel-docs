@@ -1,15 +1,15 @@
 # Codex 接入
 
-Codex 是 OpenAI 的代码 Agent 产品族，不只有 CLI。官方文档把 Codex 分为 App、IDE Extension、CLI、Web/cloud、GitHub / Slack / Linear 集成等 产品入口。
+Codex 是 OpenAI 的代码 Agent 产品族，不只有 CLI。官方文档把 Codex 分为 App、IDE Extension、CLI、Web/cloud、GitHub / Slack / Linear 集成等产品入口。
 
-接入 Arqel 前，需要确认你正在使用的 Codex 产品入口 是否支持自定义 Provider、API Key、Base URL 和模型配置。
+接入 Arqel 前，需要确认你正在使用的 Codex 产品入口是否支持自定义 Provider、API Key、Base URL 和模型配置。
 
 ::: info 版本说明
 最后核对时间：2026-05-15。第三方工具变化很快，界面和配置键可能随版本变化；如果行为不同，请以当前官方文档为准。
 :::
 
 ::: warning 协议兼容
-Codex 的 Provider 配置随 产品入口 和版本变化。OpenAI-compatible Base URL 只有在当前 Codex 产品入口 明确支持自定义 Provider、API Key、Base URL 和模型配置时才可用。接入前请先阅读 [工具接入总览](/tools/) 的协议兼容说明。
+Codex 的 Provider 配置随产品入口和版本变化。OpenAI-compatible Base URL 只有在当前 Codex 产品入口明确支持自定义 Provider、API Key、Base URL 和模型配置时才可用。接入前请先阅读 [工具接入总览](/tools/) 的协议兼容说明。
 :::
 
 本页按 Codex 产品族说明，终端部分会明确写作 Codex CLI：
@@ -28,7 +28,7 @@ Codex 的 Provider 配置随 产品入口 和版本变化。OpenAI-compatible Ba
 | GitHub / Slack / Linear 集成 | OpenAI 官方集成 | 通常是官方云端集成，不应默认走 Arqel |
 
 ::: warning
-Codex CLI 能配置 Arqel，不代表 Codex App、Codex Web 或 IDE Extension 也自动使用同一套配置。每个 产品入口 都要单独验证请求是否出现在 Arqel 控制台。
+Codex CLI 能配置 Arqel，不代表 Codex App、Codex Web 或 IDE Extension 也自动使用同一套配置。每个产品入口都要单独验证请求是否出现在 Arqel 控制台。
 :::
 
 ::: details 图片占位：Codex CLI 启动界面
@@ -88,19 +88,19 @@ codex --version
 
 ## 配置思路
 
-如果当前版本支持 OpenAI-compatible 配置，可以使用：
+如果当前 Codex 入口明确支持 OpenAI-compatible 第三方 Provider，可以使用类似变量：
 
 ```bash
 export OPENAI_API_KEY="$ARQEL_API_KEY"
 export OPENAI_BASE_URL="$ARQEL_BASE_URL"
 ```
 
-然后在 Codex 配置中选择对应 provider 或模型。
+然后在 Codex 当前入口的配置中选择对应 Provider 或模型。Codex App、IDE Extension、Web/cloud 不一定读取 Codex CLI 的环境变量。
 
 模型名必须来自 Arqel 控制台。不要把 Codex 或 OpenAI 文档里的模型别名、模型家族名或示例占位文字直接填进 Arqel 配置。
 
 ::: warning
-Codex 的认证和配置方式会随 产品入口 与版本变化。请以你正在使用的 Codex App、IDE Extension、CLI 或 Web/cloud 官方文档为准；终端用户可同时查看 `codex --help`。
+Codex 的认证和配置方式会随产品入口与版本变化。请以你正在使用的 Codex App、IDE Extension、CLI 或 Web/cloud 官方文档为准；终端用户可同时查看 `codex --help`。
 :::
 
 ## 方式 A：使用 CC Switch
@@ -128,7 +128,7 @@ Codex 的认证和配置方式会随 产品入口 与版本变化。请以你正
 
 ## 方式 B：手动配置
 
-如果当前 Codex 版本支持 OpenAI-compatible 配置，可以设置：
+如果当前 Codex 入口明确支持 OpenAI-compatible 第三方 Provider，可以设置：
 
 macOS / Linux / WSL：
 
@@ -144,7 +144,7 @@ $env:OPENAI_API_KEY=$env:ARQEL_API_KEY
 $env:OPENAI_BASE_URL=$env:ARQEL_BASE_URL
 ```
 
-然后按 Codex 当前版本要求选择 Provider 和模型。
+然后按 Codex 当前版本要求选择 Provider 和模型。若 Arqel 控制台没有请求记录，请先确认当前运行的是 Codex CLI、App、IDE Extension 还是 Web/cloud。
 
 ## 建议先执行只读任务
 

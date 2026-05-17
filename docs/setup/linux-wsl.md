@@ -8,13 +8,20 @@ WSL 可以理解成 Windows 里的 Linux 环境。它适合运行很多原本面
 
 如果你已经在使用 Linux，可以跳过本节。
 
-在 Windows PowerShell 管理员窗口中运行：
+打开 Windows PowerShell 管理员窗口：
+
+1. 按 Windows 键。
+2. 输入 `PowerShell`。
+3. 右键选择“以管理员身份运行”。
+4. 看到管理员权限确认弹窗时，点击“是”。
+
+然后运行：
 
 ```powershell
 wsl --install -d Ubuntu
 ```
 
-安装完成后重启电脑。第一次打开 Ubuntu 时，它会让你创建 Linux 用户名和密码。这个密码不是 Windows 密码，但执行 `sudo` 时会用到。
+安装完成后重启电脑。第一次打开 Ubuntu 时，窗口会提示你等待初始化，然后创建 Linux 用户名和密码。输入密码时屏幕可能没有任何字符显示，这是正常现象。这个密码不是 Windows 密码，但执行 `sudo` 时会用到。
 
 ## 1. 安装基础依赖
 
@@ -97,6 +104,8 @@ export ARQEL_API_KEY="sk-..."
 export ARQEL_BASE_URL="https://api.arqel.dev/v1"
 ```
 
+临时 `export` 只对当前 WSL 终端有效，适合短时间测试。关闭窗口后变量会消失。
+
 长期设置到 `~/.bashrc`：
 
 ```bash
@@ -109,6 +118,12 @@ source ~/.bashrc
 ```
 
 如果你使用的是 zsh，把 `~/.bashrc` 换成 `~/.zshrc`。
+
+::: warning
+`~/.bashrc` 和 `~/.zshrc` 是当前 Linux 用户可读的 shell 配置文件，适合个人开发机，不适合生产服务、共享机器或包含客户数据的环境。生产环境请使用 Secret Manager、云平台 Secrets 或服务器侧安全环境变量。
+:::
+
+如果不再使用这台机器，或 Key 曾经暴露在截图、录屏、终端历史里，请删除 `~/.bashrc` 或 `~/.zshrc` 中对应的两行，重新打开终端，并在 Arqel 控制台停用旧 Key、创建新 Key。
 
 ## 6. Windows 和 WSL 环境变量不会自动同步
 

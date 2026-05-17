@@ -132,12 +132,18 @@ setx ARQEL_BASE_URL "https://api.arqel.dev/v1"
 
 `setx` 后需要重新打开终端才会生效。
 
+::: warning
+`setx` 会写入 Windows 用户环境变量，适合个人开发机的长期配置，但不适合生产服务、共享电脑、远程协助截图或录屏场景。生产环境请使用 Secret Manager、云平台 Secrets 或服务器侧安全环境变量。
+:::
+
 ### 临时变量和长期变量的区别
 
 - `$env:ARQEL_API_KEY="..."` 只对当前 PowerShell 窗口有效。
 - `setx ARQEL_API_KEY "..."` 会写入 Windows 用户环境变量，但新打开的终端才会读取。
 
 如果你刚设置完就验证失败，先关掉终端重新打开。
+
+如果不再使用这台机器，或 Key 曾经暴露在截图、录屏、终端历史里，请在“系统属性 > 环境变量”里删除对应用户变量，并在 Arqel 控制台停用旧 Key、创建新 Key。
 
 ## 7. 什么时候使用 WSL2
 

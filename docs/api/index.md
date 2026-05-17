@@ -23,7 +23,7 @@ Auth: Authorization: Bearer <API Key>
 | [Chat Completions](/api/chat-completions) | 基础聊天补全请求格式 |
 | [错误码](/help/troubleshooting/errors) | 常见失败状态和排查方向 |
 
-## 最小请求
+## 基础调用结构
 
 ```http
 POST /chat/completions
@@ -38,22 +38,39 @@ POST /chat/completions
 }
 ```
 
-## 能力边界
+## 能力矩阵
 
-| 能力 | 当前文档状态 | 使用建议 |
+| 能力 | 文档状态 | 接入建议 |
 | --- | --- | --- |
 | Bearer Token 鉴权 | 已文档化 | 每个请求都带 `Authorization: Bearer <API Key>` |
-| Chat Completions 基础文本请求 | 已文档化 | 先用 `model` + `messages` 跑通 |
-| Streaming | 当前文档未覆盖 | 不要默认传 `stream: true`；需要时先确认产品能力 |
-| Tool calling / function calling | 当前文档未覆盖 | 不要照搬其他平台参数 |
-| JSON mode / structured output | 当前文档未覆盖 | 需要时先做最小请求验证，再确认支持状态 |
-| Embeddings / Images / Responses API / Models list | 当前文档未覆盖 | 以控制台和后端实际能力为准 |
-| Anthropic-compatible / Gemini-compatible / Codex-specific 协议 | 未确认 | Agent 接入请看工具页的兼容说明 |
+| Chat Completions 基础文本请求 | 已文档化 | 使用 `model` + `messages` 作为基础结构 |
+| Streaming | 未确认 | 不要默认传 `stream: true`；需要时先确认产品能力 |
+| Tool calling / function calling | 未确认 | 不要照搬其他平台参数 |
+| JSON mode / structured output | 未确认 | 不要默认启用；需要时先用测试 Key 验证 |
+| Embeddings | 未确认 | 不要假设 `/embeddings` 可用 |
+| Images / Audio / 多模态输入 | 未确认 | 以控制台和产品说明为准 |
+| Responses API / Models list | 未确认 | 不要把其他平台端点直接迁移过来 |
+| Anthropic-compatible / Gemini-compatible / Codex-specific 协议 | 未确认 | 不要作为 Arqel 能力编写生产配置 |
+
+“未确认”表示本站当前没有把该能力作为稳定接入面文档化。需要这些能力时，请使用独立测试 Key 验证，并等待产品或后端确认后再进入生产服务。
+
+## 生产接入需要确认
+
+在把 Arqel 接入生产服务前，请确认这些信息：
+
+| 项目 | 当前文档状态 | 建议 |
+| --- | --- | --- |
+| 请求字段范围、默认值和最大长度 | 未完整文档化 | 先限制在本文档列出的基础字段 |
+| 响应字段稳定性 | 未完整文档化 | 只依赖已验证存在的字段，其他字段做可选处理 |
+| 错误对象结构 | 未完整文档化 | 同时记录 HTTP 状态码和响应中的 `error` 对象 |
+| 限流和 `Retry-After` | 未完整文档化 | 对 `429` 做有限重试，不要无限重试 |
+| 请求 ID / trace ID | 视实际返回而定 | 如果响应或控制台提供，请记录到应用日志 |
+| 模型能力和上下文长度 | 以控制台和产品说明为准 | 不要把其他平台同名模型能力直接套用 |
 
 ## 常见任务
 
 | 任务 | 入口 |
 | --- | --- |
-| 测试 API 请求 | [API 请求测试](/getting-started/api/first-request) |
+| 查看 API 调用示例 | [API 调用示例](/getting-started/api/first-request) |
 | 使用 SDK | [OpenAI SDK 接入](/tools/sdk/openai) |
 | 请求失败 | [错误码](/help/troubleshooting/errors) |

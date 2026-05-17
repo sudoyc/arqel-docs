@@ -14,24 +14,24 @@ export default defineConfig({
     logo: '/favicon.svg',
     siteTitle: 'Arqel Docs',
     nav: [
-      { text: '快速教程', link: '/getting-started/windows-ccswitch' },
+      { text: '入门', link: '/getting-started/' },
       { text: 'API 参考', link: '/api/' },
       { text: '工具接入', link: '/tools/' },
       { text: '概念', link: '/concepts/' },
-      { text: '帮助与安全', link: '/help/' }
+      { text: '帮助', link: '/help/' }
     ],
     sidebar: [
       {
         text: '快速教程',
         collapsed: false,
         items: [
-          { text: 'Windows + CC Switch', link: '/getting-started/windows-ccswitch' },
           { text: '入口总览', link: '/getting-started/' },
+          { text: '按目标选择', link: '/getting-started/basics/choose-path' },
+          { text: 'Windows + CC Switch', link: '/getting-started/windows-ccswitch' },
           {
             text: '准备知识',
             collapsed: true,
             items: [
-              { text: '按目标选择', link: '/getting-started/basics/choose-path' },
               { text: '基础概念', link: '/getting-started/basics/basic-concepts' },
               { text: '词汇表', link: '/getting-started/basics/glossary' }
             ]
@@ -42,7 +42,7 @@ export default defineConfig({
             items: [
               { text: '创建 API Key', link: '/getting-started/api/api-key' },
               { text: 'Base URL 和模型名', link: '/getting-started/api/base-url-and-model' },
-              { text: '发送第一条请求', link: '/getting-started/api/first-request' }
+              { text: 'API 调用示例', link: '/getting-started/api/first-request' }
             ]
           },
           {
@@ -70,7 +70,7 @@ export default defineConfig({
       },
       {
         text: 'API 参考',
-        collapsed: true,
+        collapsed: false,
         items: [
           { text: 'API 入口', link: '/api/' },
           { text: '鉴权', link: '/api/authentication' },
@@ -118,7 +118,7 @@ export default defineConfig({
       },
       {
         text: '概念',
-        collapsed: false,
+        collapsed: true,
         items: [
           { text: '概念总览', link: '/concepts/' },
           { text: 'Base URL', link: '/concepts/base-url' },
@@ -129,7 +129,7 @@ export default defineConfig({
       },
       {
         text: '帮助',
-        collapsed: false,
+        collapsed: true,
         items: [
           { text: '常见问题', link: '/help/' },
           {

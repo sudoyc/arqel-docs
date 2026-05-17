@@ -43,6 +43,17 @@ Cursor 是桌面应用，三端核心配置思路一致：
 4. 填入 Arqel Base URL。
 5. 选择模型并发送测试问题。
 
+如果设置页支持搜索，可以依次搜索这些关键词：
+
+- `OpenAI`
+- `API Key`
+- `Base URL`
+- `Custom API`
+- `Model`
+- `Provider`
+
+如果当前版本没有 Custom API、OpenAI-compatible、Base URL 或 Provider 一类字段，不要把 Arqel Key 填进无关的登录、订阅或插件字段。先停止配置，确认当前 Cursor 版本、订阅状态和官方文档是否支持自定义 API。
+
 ## Cursor 和其他 Agent 的区别
 
 | 场景 | 说明 |
@@ -94,6 +105,8 @@ Cursor 是桌面应用，三端核心配置思路一致：
 ### Cursor 没有自定义 Base URL 入口
 
 不同版本和订阅状态可能影响可配置项。请先确认当前 Cursor 版本是否支持 OpenAI-compatible / Custom API。
+
+如果确认当前版本没有这个入口，就不要继续猜字段。可以改用 OpenAI SDK、cURL 或其他已确认支持自定义 Base URL 的工具完成 Arqel 接入。
 
 ### 配置后仍然失败
 

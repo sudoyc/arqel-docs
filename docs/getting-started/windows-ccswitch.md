@@ -1,6 +1,6 @@
-# Windows 最快接入：用 CC Switch 配置 Arqel
+# Windows 工具接入：用 CC Switch 管理 Arqel Provider
 
-这是一条面向工具用户的路径：先把 Arqel 配进 CC Switch，再让 Claude Code、Gemini CLI、Codex 等工具使用这个 Provider。
+这是一条面向 Windows 工具用户的路径：把 Arqel Provider 添加到 CC Switch，然后尝试让 Claude Code、Gemini CLI、Codex 等目标工具使用该 Provider，并逐个验证。
 
 如果你只是想用 AI 编程工具，不需要先读完整 API 文档，也不需要先从 cURL 开始。
 

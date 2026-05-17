@@ -1,18 +1,16 @@
-# API 请求测试
+# API 调用示例
 
-下面示例使用 OpenAI-compatible 的请求方式。实际 Base URL 和模型名以你的 Arqel 控制台为准。
+下面示例使用 OpenAI-compatible 的请求方式。实际 Base URL 和模型名以你的 Arqel 控制台为准。你可以把它当作 API 调试的基准样例。
 
 ::: warning
 模型名请使用 Arqel 控制台中显示的具体名称。不要把其他平台里的模型别名或示例占位文字直接填入请求。
 :::
 
-这一页的目标不是让你马上写程序，而是先确认三件事：
+这一页的目标不是让你马上写程序，而是给你一个最小、可复用的调用样例，便于确认三件事：
 
 1. API Key 是有效的。
 2. Base URL 填对了。
 3. 模型名可用。
-
-只要这一条请求跑通，后面接 Cursor、Claude Code、Gemini CLI、Codex 或 SDK 都会容易很多。
 
 ## 开始前准备
 
@@ -22,6 +20,8 @@
 - Arqel Base URL，例如 `https://api.arqel.dev/v1`。
 - 一个控制台里显示可用的具体模型名。
 - 一个终端：macOS 终端、Windows PowerShell、Linux / WSL 终端都可以。
+
+请把 Base URL 和模型名从 Arqel 控制台复制出来，不要凭经验手写。模型名必须是控制台显示的具体名称。
 
 如果你还没有这些，请先阅读：
 
@@ -61,13 +61,21 @@ macOS 和大多数 Linux 通常自带 cURL。Windows 10/11 通常也已经内置
 
 验证：
 
+macOS / Linux / WSL：
+
 ```bash
 curl --version
 ```
 
+Windows PowerShell：
+
+```powershell
+curl.exe --version
+```
+
 如果能看到版本号，就可以继续。
 
-如果 Windows PowerShell 行为异常，可以先跳过 cURL，后续使用 OpenAI SDK 或工具内置测试；但建议优先把 cURL 跑通，因为它最直接。
+如果 Windows PowerShell 行为异常，可以先跳过 cURL，后续使用 OpenAI SDK 或工具内置测试。
 
 ## cURL 示例
 
@@ -131,7 +139,7 @@ Invoke-RestMethod `
   -Body $body
 ```
 
-## 3. 这段请求每一部分是什么意思
+## 这段请求每一部分是什么意思
 
 ```text
 POST /chat/completions
@@ -190,12 +198,13 @@ Authorization: Bearer <你的 API Key>
 3. `Authorization` 头是否是 `Bearer sk-...`。
 4. 模型名是否可用。
 5. 账户余额或额度是否足够。
+6. Windows PowerShell 是否使用了 `curl.exe`，而不是 `curl` 别名。
 
 更多排查见 [成功和失败示例](/getting-started/troubleshooting/success-and-failure-examples) 和 [请求失败排查](/help/troubleshooting/)。
 
 ## 下一步
 
-请求跑通后，你可以继续：
+继续阅读：
 
 - [Cursor 接入](/tools/agents/cursor)
 - [Claude Code 接入](/tools/agents/claude-code)

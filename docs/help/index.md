@@ -115,11 +115,11 @@ $ARQEL_BASE_URL/chat/completions
 
 ### Claude Code 能直接用 OpenAI-compatible Base URL 吗？
 
-不能直接假设。Claude Code 通常需要 Anthropic-compatible 支持或已验证的适配路径。
+不能直接假设。Claude Code 可能要求非 OpenAI-compatible 协议或已验证的适配路径；Arqel 是否支持该路径需要以产品确认或实测为准。
 
 ### Gemini CLI 能直接用 OpenAI-compatible Base URL 吗？
 
-不能直接假设。Gemini CLI 可能需要 Gemini native / Gemini-compatible 支持，或版本特定的 Provider 配置。
+不能直接假设。Gemini CLI 可能需要 Gemini 原生协议、Gemini-compatible 协议或版本特定 Provider 配置；Arqel 是否支持该路径需要以产品确认或实测为准。
 
 ### Codex 为什么配置方式变化？
 

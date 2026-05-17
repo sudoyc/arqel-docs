@@ -22,7 +22,16 @@
 | API Key | Arqel 控制台创建的 Key |
 | Base URL | Arqel 控制台提供的 Base URL |
 | 模型名 | 控制台里可用的具体模型名 |
-| Provider 类型 | 按目标工具选择 Claude / OpenAI-compatible / Gemini 等 |
+| Provider 类型 | 按目标工具和 CC Switch 当前界面选择；如果该类型代表协议，必须先确认 Arqel 和目标工具都支持 |
+
+::: warning Provider 类型不是协议转换承诺
+在 CC Switch 中看到 Claude、OpenAI-compatible、Gemini 等类型时，不要理解为 Arqel 自动支持这些协议。Provider 类型必须同时满足两件事：
+
+1. 目标工具当前版本会读取这个 Provider 类型。
+2. Arqel 或已验证适配层明确支持这个 Provider 类型对应的请求协议。
+
+如果任意一项不确定，请先使用测试 Key 做只读验证，不要写入长期配置或生产配置。
+:::
 
 操作步骤：
 
