@@ -2,6 +2,8 @@
 
 Arqel 当前文档优先覆盖 OpenAI-compatible 的基础调用：Bearer Token 鉴权和 Chat Completions。
 
+如果你是新手，只想接入 Cursor、Claude Code、Gemini CLI、Codex 或 CC Switch，请先看 [新手入门](/getting-started/agent-quickstart)。这一部分主要给后端、脚本、SDK 和深度排障使用。
+
 ::: warning
 每次请求都要填写 Arqel 控制台中显示的具体模型名。不要把模型家族名、其他平台别名或示例占位文字直接填入请求。
 :::
@@ -71,6 +73,6 @@ POST /chat/completions
 
 | 任务 | 入口 |
 | --- | --- |
-| 查看 API 调用示例 | [API 调用示例](/getting-started/api/first-request) |
+| 查看 API 调用示例 | [API 调用示例](/api/request-example) |
 | 使用 SDK | [OpenAI SDK 接入](/tools/sdk/openai) |
 | 请求失败 | [错误码](/help/troubleshooting/errors) |

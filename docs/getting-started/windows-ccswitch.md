@@ -1,14 +1,15 @@
 # Windows 工具接入：用 CC Switch 管理 Arqel Provider
 
-这是一条面向 Windows 工具用户的路径：把 Arqel Provider 添加到 CC Switch，然后尝试让 Claude Code、Gemini CLI、Codex 等目标工具使用该 Provider，并逐个验证。
+这页保留给已经熟悉 Windows 工具的用户作参考。完全新手请先看 [新手入门：Windows 用 CC Switch 接入 Arqel](/getting-started/agent-quickstart)。
 
-如果你只是想用 AI 编程工具，不需要先读完整 API 文档，也不需要先从 cURL 开始。
+本文只补充 CC Switch 管理多个 Agent 时的判断点，不再重复每一步截图教程。
 
 ## 适合谁
 
 | 情况 | 建议 |
 | --- | --- |
-| Windows 用户，想尽快接入 Claude Code / Gemini CLI / Codex | 走本教程 |
+| Windows 新手 | 先看 [新手入门](/getting-started/agent-quickstart) |
+| Windows 用户，想尽快接入 Claude Code / Gemini CLI / Codex | 优先用 CC Switch |
 | 同时使用多个 Agent | 走本教程，用 CC Switch 统一管理 |
 | 只在后端代码里调用 API | 看 [API 参考](/api/) 和 [OpenAI SDK](/tools/sdk/openai) |
 | 只用 Cursor 一个工具 | 可以先看 [Cursor](/tools/agents/cursor)，也可以继续用 CC Switch 管理其他 Agent |
@@ -21,10 +22,6 @@
 2. CC Switch。
 3. Arqel 控制台里的 API Key、Base URL、模型名。
 4. 你要使用的工具，例如 Claude Code、Gemini CLI 或 Codex。
-
-::: details 图片占位：Windows 接入总览
-需要一张流程图：Windows → CC Switch → Arqel Provider → Claude Code / Gemini CLI / Codex。
-:::
 
 ## 1. 安装 CC Switch
 
@@ -48,10 +45,6 @@
 | 模型名 | 控制台显示的具体可用模型名 |
 
 模型名要复制控制台里的完整名称。不要填 `default`、`best`、模型家族名或其他工具里的别名，除非它们明确出现在 Arqel 控制台中。
-
-::: details 图片占位：Arqel 控制台 Provider 信息
-截图标出 API Key、Base URL、模型名位置。API Key 必须打码。
-:::
 
 ## 3. 在 CC Switch 添加 Arqel Provider
 

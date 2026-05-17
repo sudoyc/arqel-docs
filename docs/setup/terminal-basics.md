@@ -23,29 +23,17 @@
 2. 输入 `Terminal` 或 `终端`。
 3. 按 Enter 打开。
 
-::: details 图片占位：macOS Terminal
-这里需要一张 macOS Spotlight 搜索 Terminal 并打开终端的截图。
-:::
-
 ### Windows PowerShell
 
 1. 打开开始菜单。
 2. 搜索 `PowerShell` 或 `Windows Terminal`。
 3. 打开后确认标签页显示 PowerShell。
 
-::: details 图片占位：Windows PowerShell
-这里需要一张 Windows Terminal 中 PowerShell 标签页的截图。
-:::
-
 ### WSL Ubuntu
 
 1. 先安装 WSL 和 Ubuntu。
 2. 打开 Windows Terminal。
 3. 新建标签页，选择 Ubuntu。
-
-::: details 图片占位：WSL Ubuntu terminal
-这里需要一张 Windows Terminal 中打开 Ubuntu / WSL 标签页的截图。
-:::
 
 ## 在哪里粘贴命令
 
@@ -166,10 +154,6 @@ v22.11.0
 - `401`
 - `403`
 - `429`
-
-::: details 图片占位：成功命令执行示例
-这里需要一张终端截图，展示 `node -v`、`npm -v`、`git --version` 成功返回版本号。
-:::
 
 ## 下一步
 

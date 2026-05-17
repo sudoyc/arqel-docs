@@ -8,7 +8,6 @@ Windows 用户最容易遇到的问题是：同一台电脑里其实有多个环
 
 | 场景 | 实际环境 | 配置通常写在哪里 |
 | --- | --- | --- |
-| PowerShell 里运行 `curl.exe` | Windows 原生 | Windows 环境变量 |
 | PowerShell 里运行 `claude` / `gemini` / `codex` | Windows 原生 | Windows 用户目录 |
 | WSL Ubuntu 里运行 CLI | WSL Linux | WSL 用户目录 |
 | VS Code Remote - WSL 打开项目 | WSL Linux | WSL 用户目录 |
@@ -18,12 +17,11 @@ Windows 用户最容易遇到的问题是：同一台电脑里其实有多个环
 
 适合：
 
-- 只想用 cURL 测试 Arqel API。
 - 使用 Cursor 这类 Windows 桌面应用。
 - 不想安装和维护 Linux 环境。
 - 只是设置简单环境变量并做短期测试。
 
-注意：PowerShell 里的 `curl` 可能不是原生 cURL，请优先写 `curl.exe`。
+如果你只是接 Agent，不需要先用 PowerShell 手写 API 请求。
 
 ## 什么时候用 WSL
 
@@ -89,10 +87,10 @@ Windows 版 CC Switch 通常管理 Windows 用户目录里的配置。WSL 里的
 
 如果你不确定：
 
-1. 只测试 API：用 PowerShell。
-2. 用 Cursor：先按 Cursor Windows 桌面应用配置。
-3. 用 Claude Code / Gemini CLI / Codex 做项目开发：优先考虑 WSL。
-4. 已经用 CC Switch 管理 Windows CLI：先确认你的 CLI 不是装在 WSL 里。
+1. 用 Cursor：先按 Cursor Windows 桌面应用配置。
+2. 用 Claude Code / Gemini CLI / Codex 做项目开发：优先考虑 WSL。
+3. 已经用 CC Switch 管理 Windows CLI：先确认你的 CLI 不是装在 WSL 里。
+4. 后端、脚本或 SDK 调试 API：再按 API 参考选择 PowerShell 或 WSL。
 
 ## 下一步
 

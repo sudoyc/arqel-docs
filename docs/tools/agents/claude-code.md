@@ -1,163 +1,36 @@
 # Claude Code 接入
 
-Claude Code 是 Anthropic 的代码 Agent，不只存在于命令行。官方文档描述的产品入口包括 Terminal CLI、VS Code / IDE 插件、Claude Desktop 的 Code tab、Web、JetBrains 等。
-
-接入 Arqel 时，重点不是“Claude 能不能回复”，而是你当前使用的 Claude Code 产品入口是否支持第三方 Provider、自定义 Base URL、API Key 和具体模型名。
+Claude Code 是 Anthropic 的代码 Agent 产品族，可能出现在终端、IDE 插件、Desktop Code tab、Web 等入口里。接入 Arqel 时，不要只看“Claude 能不能回复”，要确认你正在使用的那个入口是否真的走了 Arqel。
 
 ::: info 版本说明
 最后核对时间：2026-05-15。第三方工具变化很快，界面和配置键可能随版本变化；如果行为不同，请以当前官方文档为准。
 :::
 
-::: warning 协议兼容
-Claude Code 可能要求非 OpenAI-compatible 协议或经过验证的适配路径。OpenAI-compatible Base URL 不代表 Claude Code 一定可以直接使用，Arqel 是否支持目标协议需要以产品确认或实测为准。接入前请先阅读 [工具接入总览](/tools/) 的协议兼容说明。
+::: warning 协议边界
+Claude Code 可能要求非 OpenAI-compatible 协议或经过验证的适配路径。能填写 Base URL 不代表 Arqel 已支持 Claude Code 所需协议；最终以产品确认或只读实测为准。
 :::
 
-本页分两种方式：
+## 先分清入口
 
-- 使用 CC Switch 管理配置。
-- 手动配置环境变量或工具配置。
+| 入口 | 接入时重点确认 |
+| --- | --- |
+| Claude Code Terminal | `claude` 命令读取哪份 Provider、settings 或环境变量 |
+| Claude Code IDE 插件 | 插件是否连接本地 Claude Code，以及是否继承同一套设置 |
+| Claude Desktop Code tab | 是否使用 Claude Code 设置，而不是普通 Desktop Chat 的 MCP 配置 |
+| Claude Web / cloud | 是否支持第三方 Provider；不要默认读取本地配置 |
 
-如果你同时使用多个 Agent，建议优先读 [CC Switch 使用教程](/tools/cc-switch/)。
+Claude Code 的 settings、MCP servers、`CLAUDE.md` 等项目配置和普通 Claude Desktop MCP 教程里的 `claude_desktop_config.json` 不是一回事。看到相似文件名时，先确认它属于哪个产品入口。
 
-::: details 图片占位：Claude Code 在终端中的启动界面
-这里需要一张 Claude Code 启动后的终端截图，展示已经进入 Claude Code 交互界面。截图中不要包含 API Key。
-:::
+## 推荐方式：CC Switch
 
-## 先分清 Claude 产品
-
-| 你看到的产品 | 说明 | Arqel 接入关注点 |
-| --- | --- | --- |
-| Claude Code Terminal | 在终端里运行 `claude` | 是否支持第三方 Provider / Base URL / 环境变量 |
-| Claude Code IDE 插件 | VS Code、Cursor、JetBrains 等 IDE 中的 Claude Code | 插件是否连接本地 Claude Code，以及是否继承同一套 Claude Code 设置 |
-| Claude Desktop 的 Code tab | Claude 桌面 App 中的软件开发界面 | 官方称属于 Claude Code 产品入口，settings、CLAUDE.md、MCP servers 可跨产品入口生效 |
-| Claude Desktop Chat | 普通 Claude 桌面聊天和 MCP 使用场景 | 传统 MCP 示例使用 `claude_desktop_config.json`，不要直接等同于 Claude Code 设置 |
-| Claude Web / claude.ai/code | 浏览器里的 Claude Code | 是否支持第三方 Provider 需要单独确认 |
-
-::: warning
-Claude Code 官方文档说明 Claude Code 的多个产品入口使用同一底层 Claude Code engine，`CLAUDE.md`、settings、MCP servers 可跨产品入口生效。但 MCP 官方给 Claude Desktop 的传统示例仍使用 `~/Library/Application Support/Claude/claude_desktop_config.json` 或 `%APPDATA%\Claude\claude_desktop_config.json`。不要把这两个配置文件路径混成一个。
-:::
-
-## 安装 Claude Code CLI
-
-官方文档当前推荐原生安装脚本、Homebrew 或 WinGet。Node.js / npm 安装方式可能仍能在一些版本中看到，但新手应优先按官方当前安装页操作。
-
-macOS / Linux / WSL 原生安装：
-
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-```
-
-Windows PowerShell：
-
-```powershell
-irm https://claude.ai/install.ps1 | iex
-```
-
-Windows CMD：
-
-```batch
-curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
-```
-
-macOS Homebrew：
-
-```bash
-brew install --cask claude-code
-```
-
-Windows WinGet：
-
-```powershell
-winget install Anthropic.ClaudeCode
-```
-
-安装后验证：
-
-macOS / Linux / WSL：
-
-```bash
-claude --version
-```
-
-Windows PowerShell：
-
-```powershell
-claude --version
-```
-
-### macOS 注意事项
-
-- 推荐先用 Homebrew 或 nvm 安装 Node.js。
-- 如果 `npm install -g` 权限失败，优先处理 Node 安装方式，不建议长期依赖 `sudo`。
-- 安装后如果 `claude` 命令找不到，重开终端再试。
-
-### Windows 注意事项
-
-- 推荐在 Windows Terminal / PowerShell 中安装。
-- Windows 原生安装建议同时安装 Git for Windows，这样 Claude Code 可以使用 Bash tool；WSL 环境不需要 Git for Windows。
-- 安装后务必重新打开终端。
-- 如果后续涉及复杂 MCP 或 shell 工具，遇到兼容问题时再考虑 WSL2。
-
-### WSL 注意事项
-
-- 如果你在 WSL 里安装 Claude Code，就要在 WSL 里配置 Key。
-- Windows PowerShell 里的环境变量不会自动同步到 WSL。
-- 项目建议放在 `~/code/...`，不要放在 `/mnt/c/...`。
-
-## 适用场景
-
-- 在终端里让 Agent 阅读、修改和解释项目代码。
-- 做代码审查、错误排查、重构建议。
-- 执行多步骤开发任务。
-
-## 配置要点
-
-- API Key 使用 Arqel 创建的 Key。
-- Base URL 使用 Arqel 提供的地址。
-- 模型名使用 Arqel 控制台中显示的具体名称，并按工具支持情况填写。
-
-模型名请使用 Arqel 控制台中显示的具体名称，并按 Claude Code 当前产品入口支持的字段填写。
-
-如果当前 Claude Code 入口明确支持第三方网关，并且 Arqel 或已验证适配层明确支持对应协议，常见环境变量形态可能类似：
-
-```bash
-export ANTHROPIC_API_KEY="$ARQEL_API_KEY"
-export ANTHROPIC_BASE_URL="$ARQEL_BASE_URL"
-```
-
-::: warning
-上面的变量名只说明 Claude Code 侧可能出现的配置形态，不代表 Arqel 已支持 Anthropic-compatible 协议。请以当前版本官方文档确认 Base URL / Gateway 配置项，并以 Arqel 产品确认或实际只读验证为准。
-:::
-
-## Claude Code 配置文件
-
-官方 settings 文档中列出的 Claude Code 配置范围包括：
-
-- User settings：`~/.claude/settings.json`
-- Project settings：`.claude/settings.json`
-- Local project settings：`.claude/settings.local.json`
-- 其他状态和 MCP 配置：`~/.claude.json`
-- Project MCP servers：`.mcp.json`
-- 项目说明：`CLAUDE.md` 或 `.claude/CLAUDE.md`
-
-Windows 中 `~/.claude` 对应 `%USERPROFILE%\.claude`。
-
-如果你使用 Claude Desktop 的普通 Chat + MCP 教程，看到的可能是 `claude_desktop_config.json`。那是 Claude Desktop MCP 配置路径，不应直接当作 Claude Code 的 Provider 配置路径。
-
-## 方式 A：使用 CC Switch
-
-适合多工具用户。
-
-步骤：
+适合 Windows 用户、同时使用多个 Agent 的用户，以及不想手动改配置文件的用户。
 
 1. 安装并打开 CC Switch。
-2. 新增 Arqel Provider。
-3. Provider 中填写 Arqel API Key、Base URL、具体模型名。
-4. 切到 Claude Code 页面。
-5. 启用 Arqel Provider。
-6. 关闭正在运行的 Claude Code。
-7. 重新打开终端，进入项目目录。
-8. 运行 `claude`。
+2. 新增 Arqel Provider，填写 API Key、Base URL 和 Arqel 控制台里的具体模型名。
+3. 进入 Claude Code 配置页。
+4. 启用 Arqel Provider。
+5. 关闭正在运行的 Claude Code。
+6. 重新打开终端或 IDE，再启动 Claude Code。
 
 只读测试：
 
@@ -165,125 +38,55 @@ Windows 中 `~/.claude` 对应 `%USERPROFILE%\.claude`。
 请阅读当前目录，说明这是什么项目。不要修改任何文件。
 ```
 
-::: details 图片占位：CC Switch 中 Claude Code Provider 配置
-这里需要一张 CC Switch 的 Claude Code 配置截图，标注 Arqel Provider 已启用。
-:::
+如果 CC Switch 写入后没有变化，先确认当前 Claude Code 是在 Windows、macOS、Linux / WSL，还是 IDE 插件里运行。不同环境可能读取不同用户目录。
 
-## 方式 B：手动配置
+## 备用方式：手动配置
 
-只有在当前 Claude Code 版本支持通过环境变量指定网关，并且 Arqel 或已验证适配层确认支持对应协议时，才可以按工具文档配置类似变量：
+手动配置前先看 [手动配置参考](/tools/agents/manual-config)。只有在当前 Claude Code 入口明确支持第三方网关，并且 Arqel 或已验证适配层确认支持对应协议时，才按工具文档配置。
 
-macOS / Linux / WSL：
+常见需要核对的位置：
+
+| 项目 | 可能位置 |
+| --- | --- |
+| 用户 settings | `~/.claude/settings.json` |
+| 项目 settings | `.claude/settings.json` |
+| 本地项目 settings | `.claude/settings.local.json` |
+| 状态和部分 MCP 配置 | `~/.claude.json` |
+| 项目说明 | `CLAUDE.md` 或 `.claude/CLAUDE.md` |
+
+Windows 中 `~` 对应 `%USERPROFILE%`。如果你在 WSL 里运行 `claude`，它读取的是 WSL 的 Linux 用户目录，不是 Windows 用户目录。
+
+有些 Claude Code 配置路径可能出现类似变量：
 
 ```bash
 export ANTHROPIC_API_KEY="$ARQEL_API_KEY"
 export ANTHROPIC_BASE_URL="$ARQEL_BASE_URL"
 ```
 
-Windows PowerShell：
+这只说明 Claude Code 侧可能存在这种配置形态，不代表 Arqel 已支持 Anthropic-compatible 协议。若 Arqel 控制台没有请求记录，先停止调整 Key，回到当前版本官方文档确认 Provider / Gateway 入口。
 
-```powershell
-$env:ANTHROPIC_API_KEY=$env:ARQEL_API_KEY
-$env:ANTHROPIC_BASE_URL=$env:ARQEL_BASE_URL
-```
+## 验证
 
-然后运行：
-
-```bash
-claude
-```
-
-::: warning
-不同版本 Claude Code 对 Base URL / Gateway 的支持方式可能不同。若命令无法识别，或 Arqel 控制台没有对应请求记录，请停止调整 Key，回到官方文档和当前版本帮助信息确认配置入口。
-:::
-
-## VS Code 插件
-
-如果你使用 Claude Code 的 VS Code 插件：
-
-1. 打开 VS Code。
-2. 进入 Extensions。
-3. 搜索 Claude Code。
-4. 安装插件。
-5. 按插件提示登录或连接本地 CLI。
-6. 如果刚通过 CC Switch 切换 Provider，建议执行 Reload Window 或重启 VS Code。
-
-官方文档还说明 Claude Code 可安装到 Cursor。此时要区分两件事：Cursor 自己的模型/API 设置，和 Claude Code 插件连接的 Claude Code 设置。
-
-::: details 图片占位：VS Code 扩展市场中的 Claude Code 插件
-这里需要一张 VS Code Extensions 页面截图，框出 Claude Code 插件。
-:::
-
-## 建议先测试
-
-在真实项目里执行复杂任务前，先让 Agent 回答一个不改文件的问题：
-
-```text
-请说明当前目录下 package.json 的 scripts 含义，不要修改文件。
-```
-
-确认请求能正常返回后，再授权它进行代码修改。
-
-## 确认真的走了 Arqel
-
-Claude Code 能回复不一定代表它使用了 Arqel。请用控制台记录确认。
-
-验证步骤：
-
-1. 在 Claude Code 中发送只读测试问题。
+1. 在 Claude Code 里发送只读测试问题。
 2. 打开 Arqel 控制台。
-3. 查看使用记录或请求记录。
-4. 核对时间是否和刚才测试一致。
-5. 核对 Key 名称是否是 Claude Code 使用的 Key。
-6. 核对模型名是否是 Claude Code 配置的具体模型名。
+3. 查看请求记录或用量记录。
+4. 核对请求时间、Key 名称和模型名。
 
-::: details 图片占位：Arqel 使用记录确认 Claude Code 请求
-这里需要一张 Arqel 控制台使用记录截图，框出请求时间、Key 名称、模型名，并说明这条记录来自 Claude Code 测试。
-:::
-
-## 推荐项目规则
-
-在项目根目录准备 `CLAUDE.md`，写清楚：
-
-```markdown
-# CLAUDE.md
-
-## Project
-- Tech stack:
-- How to run tests:
-
-## Rules
-- Prefer small, reviewable diffs.
-- Do not commit secrets.
-- Before finishing, show changed files and verification results.
-```
+Claude Code 能回复不等于一定走了 Arqel。以 Arqel 控制台记录为准。
 
 ## 常见问题
 
 ### `claude` 命令找不到
 
-先检查：
+先确认 Claude Code 已按官方说明安装，并重新打开终端。如果是在 IDE 插件里使用，还要确认插件连接的是哪一个本地 Claude Code。
 
-```bash
-node -v
-npm -v
-```
+### CC Switch 切换后还是走旧配置
 
-再重新安装 Claude Code，并重开终端。
-
-### 切换 CC Switch 后还是走旧配置
-
-检查：
-
-1. CC Switch 是否启用了正确 Provider。
-2. 是否重启 Claude Code。
-3. 当前是在 macOS/Windows 终端，还是 WSL 终端。
-4. 你安装的 Claude Code 是否和 CC Switch 管理的是同一套用户目录。
-5. 你当前使用的是 Terminal、IDE 插件、Desktop Code tab，还是普通 Claude Desktop Chat。
+检查 CC Switch 是否启用了正确 Provider、是否重启 Claude Code、当前运行环境是否和 CC Switch 管理的环境一致。Windows 终端、WSL、IDE 插件可能不是同一套配置。
 
 ### 能启动但请求失败
 
-优先检查 Arqel API Key、Base URL、模型名。如果需要排除 API 本身问题，再用 [API 调用示例](/getting-started/api/first-request) 单独验证。
+优先检查 API Key、Base URL、模型名，以及 Claude Code 当前入口支持的 Provider / Gateway / 协议。只有在深度排障时，才需要到 API 参考区单独检查请求结构。
 
 ## 官方链接
 

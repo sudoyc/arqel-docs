@@ -1,21 +1,18 @@
 # 开始使用 Arqel
 
-这部分是技术接入入口：先按你的目标选路径，再进入 API、工具、SDK、基础概念或排障页面。
+这部分帮助你选择接入方式。Arqel 文档主要讲各个工具怎么接入：优先使用 CC Switch，必要时再手动修改配置。
+
+如果你是 Windows 新手，直接看 [新手入门：Windows 用 CC Switch 接入 Arqel](/getting-started/agent-quickstart)。
 
 ## 推荐入口
 
 | 你的目标 | 先看 | 完成标准 |
 | --- | --- | --- |
-| 不知道从哪开始 | [按目标选择](/getting-started/basics/choose-path) | 能判断自己该先看 API、工具还是基础概念 |
-| 想看 API 调用和鉴权示例 | [创建 API Key](/getting-started/api/api-key) → [Base URL 和模型名](/getting-started/api/base-url-and-model) → [API 调用示例](/getting-started/api/first-request) | 能理解 Key、Base URL、模型名分别填在哪里 |
-| Windows 用户，想接入多个 Agent | [Windows 最快接入：用 CC Switch 配置 Arqel](/getting-started/windows-ccswitch) | 每个 Agent 都完成只读验证，并能在控制台看到对应记录 |
-| 想配置某个具体工具 | [工具接入参考](/tools/) | 目标工具使用独立 Key，并通过控制台记录验证 |
+| Windows 新手 | [新手入门](/getting-started/agent-quickstart) | 用 CC Switch 配好一个 Agent，并能在控制台看到记录 |
+| 想接入某个工具 | [工具接入](/tools/) | 知道这个工具推荐用 CC Switch 还是手动配置 |
+| 同时使用多个 Agent | [CC Switch](/tools/cc-switch/) | 每个 Agent 都单独验证，不只看配置是否写入 |
 | 后端或脚本调用模型 | [API 参考](/api/) / [OpenAI SDK](/tools/sdk/openai) | Key 只保存在后端或安全环境中，不暴露到浏览器前端 |
-| 请求失败或工具没走 Arqel | [接入检查清单](/getting-started/troubleshooting/checklist) | 能定位是 Key、Base URL、模型名、余额、协议还是工具配置问题 |
-
-::: tip
-如果你不确定先看什么，优先看 [按目标选择](/getting-started/basics/choose-path)。如果术语不熟，再看 [基础概念](/getting-started/basics/basic-concepts)。
-:::
+| 遇到问题 | [接入检查清单](/getting-started/troubleshooting/checklist) | 能说明工具、系统、错误截图和控制台记录情况 |
 
 ## 你需要准备的三件事
 
@@ -27,23 +24,19 @@
 
 实际控制台菜单名称可能随产品界面调整。如果团队给你单独的控制台入口或组织工作区入口，以团队给你的入口为准。
 
-::: details 图片占位：Arqel 控制台三件套位置
-这里需要一张 Arqel 控制台截图，分别框出 API Key、Base URL、模型名的位置。截图中不要显示完整 API Key。
-:::
-
 ## 文档怎么读
 
-- **入门教程**：带你完成一次真实接入，先解决“该填什么、填到哪里、怎样算成功”。
-- **工具参考**：说明 Cursor、Claude Code、Gemini CLI、Codex、CC Switch 等入口的差异和验证方式。
-- **API 参考**：给后端、脚本和 SDK 用户查接口格式。
+- **新手入门**：给 Windows 小白用户，从下载安装到确认请求记录。
+- **工具接入**：说明 Cursor、Claude Code、Gemini CLI、Codex、CC Switch 等入口的接入方式。
+- **API 参考**：给后端、脚本和 SDK 用户查接口格式，不是新手接 Agent 的必经步骤。
 - **概念 / 排障**：遇到问题时再看。
 
 ## 接入顺序
 
-1. 先确定你要走 API、SDK、工具还是 CC Switch。
-2. 从控制台复制 API Key、Base URL 和具体模型名。
-3. 按对应页面配置工具或服务。
-4. 用只读请求或只读任务验证接入。
+1. 先选工具，例如 Cursor、Claude Code、Gemini CLI、Codex。
+2. 优先看这个工具是否适合用 CC Switch。
+3. 如果 CC Switch 不适合，再按工具页的 macOS / Windows / Linux 手动配置说明处理。
+4. 用只读问题验证接入。
 5. 回到 Arqel 控制台核对请求时间、Key 名称和模型名。
 
 工具能回复不等于一定走了 Arqel。最终以 Arqel 控制台请求记录为准。

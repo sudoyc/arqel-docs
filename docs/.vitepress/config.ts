@@ -26,8 +26,8 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: '入口总览', link: '/getting-started/' },
-          { text: '按目标选择', link: '/getting-started/basics/choose-path' },
-          { text: 'Windows + CC Switch', link: '/getting-started/windows-ccswitch' },
+          { text: '新手入门（Windows）', link: '/getting-started/agent-quickstart' },
+          { text: '接入检查清单', link: '/getting-started/troubleshooting/checklist' },
           {
             text: '准备知识',
             collapsed: true,
@@ -37,20 +37,18 @@ export default defineConfig({
             ]
           },
           {
-            text: '参考：API 调用',
+            text: '参考：API 信息',
             collapsed: true,
             items: [
               { text: '创建 API Key', link: '/getting-started/api/api-key' },
-              { text: 'Base URL 和模型名', link: '/getting-started/api/base-url-and-model' },
-              { text: 'API 调用示例', link: '/getting-started/api/first-request' }
+              { text: 'Base URL 和模型名', link: '/getting-started/api/base-url-and-model' }
             ]
           },
           {
             text: '参考：验证与排障',
             collapsed: true,
             items: [
-              { text: '成功和失败示例', link: '/getting-started/troubleshooting/success-and-failure-examples' },
-              { text: '接入检查清单', link: '/getting-started/troubleshooting/checklist' }
+              { text: '成功和失败示例', link: '/getting-started/troubleshooting/success-and-failure-examples' }
             ]
           },
           {
@@ -74,7 +72,8 @@ export default defineConfig({
         items: [
           { text: 'API 入口', link: '/api/' },
           { text: '鉴权', link: '/api/authentication' },
-          { text: 'Chat Completions', link: '/api/chat-completions' }
+          { text: 'Chat Completions', link: '/api/chat-completions' },
+          { text: 'API 调用示例', link: '/api/request-example' }
         ]
       },
       {
@@ -88,6 +87,7 @@ export default defineConfig({
             items: [
               { text: 'Agent 总览', link: '/tools/agents/' },
               { text: '工具对比', link: '/tools/agents/compare' },
+              { text: '手动配置参考', link: '/tools/agents/manual-config' },
               { text: 'Cursor', link: '/tools/agents/cursor' },
               { text: 'Claude Code', link: '/tools/agents/claude-code' },
               { text: 'Gemini CLI', link: '/tools/agents/gemini-cli' },
@@ -111,6 +111,7 @@ export default defineConfig({
               { text: '安装', link: '/tools/cc-switch/install' },
               { text: '添加 Arqel Provider', link: '/tools/cc-switch/provider' },
               { text: '应用于各 Agent', link: '/tools/cc-switch/agents' },
+              { text: '多 Agent 管理参考', link: '/getting-started/windows-ccswitch' },
               { text: 'FAQ', link: '/tools/cc-switch/faq' }
             ]
           }

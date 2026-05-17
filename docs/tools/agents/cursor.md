@@ -4,12 +4,10 @@ Cursor 适合在编辑器里直接使用 AI 辅助写代码。它本质上是一
 
 Cursor 和命令行 Agent 不完全一样。它主要是编辑器应用，配置入口通常在设置界面里，而不是终端配置文件。即使你在 Cursor 的 integrated terminal 里运行了某个 CLI，也不代表 Cursor 自己的模型设置会读取那份 CLI 配置。
 
+和 Claude Code、Gemini CLI、Codex 不同，Cursor 通常优先在应用设置中配置。是否能由 CC Switch 管理，要看当前 Cursor 版本和具体入口。
+
 ::: info 版本说明
 最后核对时间：2026-05-15。第三方工具变化很快，界面和配置键可能随版本变化；如果行为不同，请以当前官方文档为准。
-:::
-
-::: details 图片占位：Cursor 设置入口
-这里需要一张 Cursor 设置页面截图，标注进入模型/API 配置的位置。
 :::
 
 ## 准备工作
@@ -37,6 +35,8 @@ Cursor 是桌面应用，三端核心配置思路一致：
 
 ## 配置思路
 
+推荐先使用 Cursor 自己的设置界面：
+
 1. 打开 Cursor 的模型或 API 设置。
 2. 找到 OpenAI-compatible / Custom API 配置项。
 3. 填入 Arqel API Key。
@@ -54,6 +54,8 @@ Cursor 是桌面应用，三端核心配置思路一致：
 
 如果当前版本没有 Custom API、OpenAI-compatible、Base URL 或 Provider 一类字段，不要把 Arqel Key 填进无关的登录、订阅或插件字段。先停止配置，确认当前 Cursor 版本、订阅状态和官方文档是否支持自定义 API。
 
+如果你想通过 CC Switch 管理 Cursor，请先确认当前 CC Switch 和 Cursor 版本是否明确支持这个入口。没有明确支持时，按 Cursor 设置页手动配置更稳。
+
 ## Cursor 和其他 Agent 的区别
 
 | 场景 | 说明 |
@@ -67,10 +69,6 @@ Cursor 是桌面应用，三端核心配置思路一致：
 
 ::: warning
 不同 Cursor 版本的设置入口可能变化。如果你找不到对应字段，先查看 Cursor 当前版本设置里的 Models、API、OpenAI-compatible 或 Custom API 相关入口，再继续配置。
-:::
-
-::: details 图片占位：Cursor 自定义 API 配置表单
-这里需要一张 Cursor 模型/API 设置表单截图，标注 API Key、Base URL、模型名字段。请打码 Key。
 :::
 
 ## 测试问题
@@ -96,23 +94,19 @@ Cursor 是桌面应用，三端核心配置思路一致：
 5. 核对 Key 名称是否是 Cursor 使用的 Key。
 6. 核对模型名是否是 Cursor 配置里的具体模型名。
 
-::: details 图片占位：Arqel 使用记录确认 Cursor 请求
-这里需要一张 Arqel 控制台使用记录截图，框出请求时间、Key 名称、模型名。截图中不要显示完整 API Key。
-:::
-
 ## 常见问题
 
 ### Cursor 没有自定义 Base URL 入口
 
 不同版本和订阅状态可能影响可配置项。请先确认当前 Cursor 版本是否支持 OpenAI-compatible / Custom API。
 
-如果确认当前版本没有这个入口，就不要继续猜字段。可以改用 OpenAI SDK、cURL 或其他已确认支持自定义 Base URL 的工具完成 Arqel 接入。
+如果确认当前版本没有这个入口，就不要继续猜字段。想快速接入 Agent 时，改用 Claude Code、Gemini CLI、Codex 或 CC Switch 这类可配置入口；只有后端、脚本或 SDK 场景才需要转到 API 参考。
 
 ### 配置后仍然失败
 
 按顺序检查：
 
-1. Arqel API Key 是否可用。
+1. Cursor 中填写的 API Key 是否来自 Arqel 控制台，且没有多余空格。
 2. Base URL 是否完整。
 3. 模型名是否来自 Arqel 控制台。
 4. Cursor 是否需要重启或 Reload Window。

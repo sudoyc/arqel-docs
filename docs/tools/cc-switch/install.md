@@ -41,10 +41,6 @@ brew upgrade --cask cc-switch
 4. 双击打开，把 CC Switch 拖入 Applications。
 5. 从启动台或应用程序目录打开。
 
-::: details 图片占位：macOS Releases 下载位置
-这里需要一张 GitHub Releases 截图，框出 macOS `.dmg` 下载项。
-:::
-
 ## Windows
 
 推荐下载 `.msi` 安装包。
@@ -56,10 +52,6 @@ brew upgrade --cask cc-switch
 5. 从开始菜单打开 CC Switch。
 
 如果你不想安装，也可以下载 `CC-Switch-v{version}-Windows-Portable.zip`，但新手推荐 `.msi`。
-
-::: details 图片占位：Windows MSI 下载位置
-这里需要一张 GitHub Releases 截图，框出 Windows `.msi` 下载项。
-:::
 
 ## Linux
 
@@ -88,7 +80,3 @@ Arch 示例：
 ```bash
 paru -S cc-switch-bin
 ```
-
-::: details 图片占位：Linux 安装包下载位置
-这里需要一张 GitHub Releases 截图，框出 `.deb`、`.rpm`、`.AppImage` 三类文件。
-:::

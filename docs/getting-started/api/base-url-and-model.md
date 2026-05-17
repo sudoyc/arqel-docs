@@ -39,10 +39,6 @@ https://api.arqel.dev/v1
 
 成功状态应该是：你能明确得到一个以 `https://` 开头、通常以 `/v1` 结尾的 API 根地址。
 
-::: details 图片占位：Arqel 控制台 Base URL 位置
-这里需要一张 Arqel 控制台截图，框出 Base URL 所在位置。截图中不要包含完整 API Key。
-:::
-
 ## 到哪里找模型名
 
 请在 Arqel 控制台的模型列表、模型管理或请求示例区域查找可用模型名。最稳妥的方式是复制控制台请求示例里的 `model` 字段。
@@ -60,10 +56,6 @@ https://api.arqel.dev/v1
 
 成功状态应该是：你复制到了一个可以放进请求 JSON `model` 字段的完整字符串。
 
-::: details 图片占位：Arqel 控制台模型列表位置
-这里需要一张 Arqel 控制台模型列表截图，标注“可复制的真实模型名”和“仅用于展示的显示名称”。
-:::
-
 ## 显示名称和真实模型名的区别
 
 显示名称通常给人看，真实模型名给 API 请求用。
@@ -77,10 +69,6 @@ https://api.arqel.dev/v1
 | 真实模型名 | 控制台复制出来的完整字符串 | 可以 |
 
 如果你不确定某个名称能不能用，优先复制控制台请求示例里的 `model` 字段。
-
-::: details 图片占位：正确复制模型名示例
-这里需要一张截图，展示从模型列表复制模型名，并粘贴到请求 JSON 的 `model` 字段中。
-:::
 
 ## 模型名必须完整一致
 
@@ -127,6 +115,8 @@ https://api.arqel.dev/v1
 
 ## 下一步
 
-- [API 调用示例](/getting-started/api/first-request)
+- [新手入门](/getting-started/agent-quickstart)
+- [工具接入参考](/tools/)
+- [API 参考](/api/)
 - [成功和失败示例](/getting-started/troubleshooting/success-and-failure-examples)
 - [模型选择](/concepts/models-and-routing)

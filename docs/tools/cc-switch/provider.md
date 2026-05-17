@@ -8,9 +8,7 @@
 - Arqel Base URL。
 - 一个具体可用的模型名。
 
-::: details 图片占位：Arqel 控制台中 API Key / Base URL / 模型名的位置
-这里需要一张截图，标注 Arqel 控制台里三个位置：API Key、Base URL、可用模型名。截图中请隐藏完整 Key，只保留前后几位。
-:::
+这些信息都以 Arqel 控制台当前显示为准。API Key 只复制到本机工具或安全配置里，不要放进截图、群聊或共享文档。
 
 ## 新增 Provider
 
@@ -48,8 +46,4 @@
 模型名必须填写 Arqel 控制台里可用的具体名称。不要使用不存在的模型名、其他平台别名或文档中的占位文字。
 
 CC Switch 可以管理 Provider 和路由配置，但不代表 Arqel 自动兼容所有 Agent 协议。保存后请逐个 Agent 做只读测试，并回到 Arqel 控制台核对请求记录。
-:::
-
-::: details 图片占位：新增 Provider 表单
-这里需要一张 CC Switch 新增 Provider 的截图，标注 Provider 名称、API Key、Base URL、模型名字段。请用打码 Key。
 :::

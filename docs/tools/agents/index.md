@@ -1,33 +1,27 @@
 # Agent 接入
 
-Agent 工具会读项目、执行命令或修改文件。接入 Arqel 时，先做只读验证，再让它处理真实项目。
+Agent 工具会读项目、执行命令或修改文件。接入 Arqel 时，推荐先用 CC Switch 管理 Provider，再按工具逐个验证。
 
-如果你要先排查 API 层，API 调用示例可以单独作为基准；如果你已经知道 Key、Base URL 和模型名可用，就直接看对应 Agent 页面。
+如果你是 Windows 新手，先看 [新手入门](/getting-started/agent-quickstart)。如果你已经知道要用哪个工具，直接进入对应工具页。
 
 ## 选择工具
 
-| 工具 / 产品入口 | 推荐页面 | 接入前必须确认 |
+| 工具 / 产品入口 | 推荐页面 | 首选方式 |
 | --- | --- | --- |
-| Cursor 桌面编辑器 | [Cursor](/tools/agents/cursor) | 自定义 API 是否作用于当前 Chat / Agent 功能 |
-| Claude Code | [Claude Code](/tools/agents/claude-code) | 当前版本支持的 Provider / 协议路径 |
-| Gemini CLI | [Gemini CLI](/tools/agents/gemini-cli) | 是否需要 Gemini 原生协议、Gemini-compatible 协议或版本特定 Provider 配置；是否可走 Arqel 需验证 |
-| Codex | [Codex](/tools/agents/codex-cli) | CLI、App、IDE、Web 是否共享配置 |
-| Hermes Agent | [Hermes Agent](/tools/agents/hermes) | 官方配置方式和 Arqel 协议支持状态 |
-| 多 Agent 管理 | [CC Switch](/tools/cc-switch/) | CC Switch 只管理配置；兼容性仍要实测 |
+| Cursor 桌面编辑器 | [Cursor](/tools/agents/cursor) | 先看 Cursor 自己的 Custom API 设置 |
+| Claude Code | [Claude Code](/tools/agents/claude-code) | CC Switch |
+| Gemini CLI | [Gemini CLI](/tools/agents/gemini-cli) | CC Switch |
+| Codex | [Codex](/tools/agents/codex-cli) | CC Switch |
+| Hermes Agent | [Hermes Agent](/tools/agents/hermes) | 先确认官方配置和协议状态 |
+| 多 Agent 管理 | [CC Switch](/tools/cc-switch/) | CC Switch |
 
 ::: warning 协议边界
 OpenAI-compatible Base URL 不代表所有 Agent 都能直接使用。不要把一个工具的成功结果外推到另一个工具。
 :::
 
-## 验证状态
+## 如果不用 CC Switch
 
-| 工具 | 本文建议 | 不要做 |
-| --- | --- | --- |
-| Cursor | 按当前设置页配置自定义 API 后验证 | 不要假设 integrated terminal 里的 CLI 会读取 Cursor 设置 |
-| Claude Code | 确认当前入口支持的 Provider / Gateway / 协议 | 不要只因为有 Base URL 就当作已支持 |
-| Gemini CLI | 确认版本、可信目录、Provider 类型和配置文件 | 不要把 Gemini 内置别名直接填到 Arqel 模型名 |
-| Codex | 区分 CLI、App、IDE Extension、Web/cloud | 不要把 CLI 成功外推到其他 Codex 入口 |
-| Hermes Agent | 先确认官方安装和配置项，再用只读测试验证 | 不要在未确认时写入长期生产配置 |
+手动配置时先看 [手动配置参考](/tools/agents/manual-config)，再看对应工具页。macOS、Windows、Linux / WSL 的配置位置不同，尤其不要把 Windows 和 WSL 混在一起。
 
 ## 验证 checklist
 

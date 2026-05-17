@@ -2,7 +2,7 @@
 
 CC Switch 是一个跨平台桌面工具，用来统一管理 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw、Hermes Agent 等 Agent 工具的 Provider、MCP、Prompts 和 Skills。
 
-如果你主要是 Windows 工具用户，并且想统一管理多个 Agent，可以参考 [Windows + CC Switch 教程](/getting-started/windows-ccswitch)。本文作为 CC Switch 的补充参考。
+如果你是 Windows 新手，可以直接看 [新手入门](/getting-started/agent-quickstart)。本文作为 CC Switch 的补充参考。
 
 ::: info 第三方工具版本
 CC Switch 和各 Agent 的界面、字段名称、配置路径可能随版本变化。如果你的界面和截图占位描述不同，请以当前 CC Switch 和目标 Agent 的界面为准。
@@ -10,7 +10,7 @@ CC Switch 和各 Agent 的界面、字段名称、配置路径可能随版本变
 
 ## 推荐路径
 
-1. Windows 用户先看 [Windows + CC Switch 教程](/getting-started/windows-ccswitch)。
+1. Windows 新手先看 [新手入门](/getting-started/agent-quickstart)。
 2. 需要字段细节时看 [添加 Arqel Provider](/tools/cc-switch/provider)。
 3. 需要按工具检查时看 [应用于各 Agent](/tools/cc-switch/agents)。
 4. 出问题时看 [CC Switch FAQ](/tools/cc-switch/faq)。
@@ -32,7 +32,7 @@ CC Switch 不是模型服务，也不是 Arqel 的替代品。它只是帮你把
 | 同时用 Claude Code、Gemini CLI、Codex | 适合使用 CC Switch 统一管理 Provider |
 | 经常切换官方 Provider 和 Arqel Provider | 适合使用 CC Switch，减少手改配置 |
 | 需要管理 MCP、Prompts、Skills | 适合使用 CC Switch |
-| Windows 工具用户 | 直接看 [Windows + CC Switch 教程](/getting-started/windows-ccswitch) |
+| Windows 工具用户 | 直接看 [新手入门](/getting-started/agent-quickstart)，或继续阅读本文 |
 
 ## CC Switch 可管理的应用
 

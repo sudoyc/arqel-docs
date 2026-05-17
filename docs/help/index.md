@@ -43,7 +43,7 @@ https://api.arqel.dev/v1
 
 通常不要。Base URL 是根地址，请求路径由 SDK、工具或命令追加。
 
-如果你在 cURL 里手动写完整请求，就会看到：
+如果你在 API、SDK 或后端代码里手动拼完整请求，就会看到：
 
 ```text
 $ARQEL_BASE_URL/chat/completions
@@ -85,7 +85,7 @@ $ARQEL_BASE_URL/chat/completions
 
 ### 我应该用 PowerShell 还是 WSL？
 
-如果你主要使用桌面工具和简单 cURL 测试，先用 PowerShell。如果你要长期运行 Claude Code、Gemini CLI、Codex、MCP 或类 Linux 工具，WSL 通常更稳定。
+如果你主要使用 Cursor 这类桌面工具，先用 PowerShell 或工具自己的设置界面。如果你要长期运行 Claude Code、Gemini CLI、Codex、MCP 或类 Linux 工具，WSL 通常更稳定。
 
 详见 [Windows 环境选择](/setup/which-environment)。
 
@@ -97,7 +97,7 @@ $ARQEL_BASE_URL/chat/completions
 
 ### 是否必须使用 CC Switch？
 
-不是。只接一个工具时可以手动配置。多个 Agent 并行使用时，CC Switch 可以减少重复配置和路径错误。
+不是。只接一个工具时可以手动配置。多个 Agent 并行使用时，优先考虑 CC Switch，它可以减少重复配置和路径错误。
 
 ### CC Switch 会替我创建 Arqel Key 吗？
 
@@ -130,6 +130,12 @@ Codex 有 CLI、App、IDE Extension、Web/cloud 等产品入口。认证和 Prov
 ### 请求没有返回
 
 先看 [请求失败排查](/help/troubleshooting/)。通常和 Key、Base URL、模型名、余额或上游状态有关。
+
+如果按文档仍然卡住，可以到交流群询问：
+
+```text
+交流群：<群号待填写>
+```
 
 ### 返回 401 怎么办？
 

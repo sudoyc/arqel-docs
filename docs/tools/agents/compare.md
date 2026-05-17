@@ -23,8 +23,9 @@
 
 ## 怎么选
 
-- 你是第一次接触 AI 工具：先看 Cursor 或 OpenAI SDK。
-- 你更习惯终端：先看 Claude Code、Gemini CLI 或 Codex。
+- 你是 Windows 新手：先看 [新手入门](/getting-started/agent-quickstart)。
+- 你只用 Cursor：先看 Cursor 自己的设置页。
+- 你更习惯终端：先看 Claude Code、Gemini CLI 或 Codex，并优先尝试 CC Switch。
 - 你会切换多个 Agent：先看 CC Switch。
 - 你要做自己的后端服务：先看 OpenAI SDK。
 - 你已经在用 Hermes、OpenCode 或 OpenClaw：先确认官方配置方式和 Arqel 协议支持，再做只读测试。

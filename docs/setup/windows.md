@@ -112,7 +112,7 @@ codex --version
 
 如果 PowerShell 阻止脚本运行，可能会看到执行策略相关错误。新手可以先尝试使用 Windows Terminal 重新打开一个普通 PowerShell，再执行验证命令。
 
-如果仍然失败，建议先跳过 CLI 安装，完成 Arqel API Key 和 cURL 测试，再单独排查 CLI 环境。
+如果仍然失败，建议先跳过这个 CLI，改用 Cursor、CC Switch 或已经能正常启动的 Agent 完成 Arqel 接入，再单独排查 CLI 环境。
 
 ## 6. 配置 Arqel 环境变量
 
