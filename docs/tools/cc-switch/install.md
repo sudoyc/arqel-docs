@@ -1,6 +1,6 @@
 # CC Switch 安装
 
-这一页只讲安装。先把 CC Switch 安装好，再回到 [CC Switch 总览](/tools/cc-switch/) 添加 Arqel Provider。
+这一页只讲安装。先把 CC Switch 安装好，再回到 [CC Switch 总览](/tools/cc-switch/) 选择目标应用并添加 Arqel Provider。
 
 ## 下载入口
 

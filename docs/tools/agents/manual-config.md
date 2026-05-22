@@ -93,7 +93,7 @@ $env:OPENAI_API_KEY=$env:ARQEL_API_KEY
 $env:OPENAI_BASE_URL=$env:ARQEL_BASE_URL
 ```
 
-不要把这组变量当成所有 Agent 都会读取的通用配置，也不要由此推断 Arqel 已支持 Anthropic-compatible、Gemini-compatible 或 Codex-specific 协议。
+不要把这组变量当成所有 Agent 都会读取的通用配置，也不要由此推断 Arqel 已支持某个 Agent 专用或非 OpenAI 请求协议。
 
 ## 怎么验证
 

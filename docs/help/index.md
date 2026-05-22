@@ -2,6 +2,17 @@
 
 这里整理接入 Arqel 时最常见的问题。
 
+## 快速分类
+
+- [API Key](#api-key)
+- [Base URL](#base-url)
+- [模型名](#模型名)
+- [Windows / WSL](#windows--wsl)
+- [CC Switch](#cc-switch)
+- [工具接入](#cursor--claude-code--gemini-cli--codex)
+- [请求失败](#请求失败)
+- [安全](#安全)
+
 ## API Key
 
 ### API Key 可以公开吗？
@@ -119,11 +130,11 @@ $ARQEL_BASE_URL/chat/completions
 
 ### Gemini CLI 能直接用 OpenAI-compatible Base URL 吗？
 
-不能直接假设。Gemini CLI 可能需要 Gemini 原生协议、Gemini-compatible 协议或版本特定 Provider 配置；Arqel 是否支持该路径需要以产品确认或实测为准。
+不能直接假设。Gemini CLI 可能需要 Gemini 原生协议、版本特定 Provider 配置或经过验证的适配路径；Arqel 是否支持该路径需要以产品确认或实测为准。
 
 ### Codex 为什么配置方式变化？
 
-Codex 有 CLI、App、IDE Extension、Web/cloud 等产品入口。认证和 Provider 配置会随产品入口与版本变化；终端用户可同时查看 `codex --help`。
+Codex 有 App、CLI、IDE Extension、Web/cloud 等产品入口。本地 Codex App、Codex CLI 和 Codex IDE Extension 共享同一套 Codex Provider 配置；Web/cloud 和云端集成仍要按当前官方界面单独确认。终端用户可同时查看 `codex --help`。
 
 ## 请求失败
 

@@ -3,7 +3,7 @@ const entryCards = [
   {
     label: '入门',
     title: '新手入门',
-    detail: 'Windows 用户用 CC Switch 接入第一个 Agent。',
+    detail: 'Windows 用户用 CC Switch 接入 Codex。',
     href: '/getting-started/agent-quickstart'
   },
   {
@@ -30,7 +30,7 @@ const entryCards = [
           接入 Arqel
         </h1>
         <p class="docs-home-subtitle docs-home-reveal docs-home-d3">
-          讲清楚各个工具怎么接入 Arqel
+          为 Cursor、Claude Code、Codex 等 AI 工具配置 Arqel API
         </p>
         <p class="docs-home-description docs-home-reveal docs-home-d4">
           工具接入优先使用 CC Switch；不适合时，再按 macOS、Windows、Linux / WSL 的手动配置说明处理。
@@ -62,7 +62,7 @@ const entryCards = [
     </section>
 
     <p class="docs-home-note docs-home-reveal docs-home-d8">
-      Windows 新手可以从“新手入门”开始；熟悉工具的用户直接进入工具接入页。
+      新手？从"新手入门"开始。老手？直接进入工具接入页。
     </p>
   </div>
 </template>

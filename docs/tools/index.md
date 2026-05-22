@@ -8,20 +8,20 @@
 
 | 目标 | 入口 | 先确认 |
 | --- | --- | --- |
-| Windows 新手 | [新手入门](/getting-started/agent-quickstart) | 先装一个 Agent，再用 CC Switch 接入 |
+| Windows 新手 | [新手入门](/getting-started/agent-quickstart) | 用 Codex + CC Switch 接入 |
 | 多个 Agent 一起管理 | [CC Switch](/tools/cc-switch/) | CC Switch 写入配置不等于每个 Agent 都已验证可用 |
 | 在 Cursor 里写代码 | [Cursor](/tools/agents/cursor) | Cursor 自己的 API 设置是否可用 |
 | 在终端或 IDE 里运行 Agent | [Agent 接入总览](/tools/agents/) | 当前产品入口支持的 Provider、协议和模型字段 |
 | 在后端服务或脚本调用模型 | [SDK 接入](/tools/sdk/) | Key 不暴露到浏览器前端 |
 
-## 接入时只认三件事
+## 接入时只需要 Arqel 接入三要素
 
 - **API Key**：在 Arqel 控制台创建。
 - **Base URL**：复制 Arqel 控制台显示的 API 地址。
 - **模型名**：复制控制台显示的具体模型名。
 
 ::: warning
-不要把同一品牌的 CLI、桌面 App、网页端、IDE 插件默认当成同一个配置入口。除非官方文档明确说明，否则逐个验证。
+不要把同一品牌的 CLI、桌面 App、网页端、IDE 插件默认当成同一个配置入口。除非官方文档或当前工具行为明确说明，否则逐个验证。Codex 的本地 App、CLI、IDE Extension 共享同一套 Codex 配置，但 Codex Web / cloud 和云端集成仍要单独确认。
 :::
 
 ## 兼容状态矩阵
@@ -29,9 +29,9 @@
 | 工具 / 入口 | 推荐路径 | 目标工具可能要求 | Arqel 文档状态 | 第一次验证 |
 | --- | --- | --- | --- | --- |
 | Cursor | [Cursor](/tools/agents/cursor) | 通常在应用设置中手动配置 | 如果当前版本支持 Custom API，可直接填写 | 在 Cursor 发送只读问题，看控制台记录 |
+| Codex | [Codex](/tools/agents/codex-cli) | 先试 CC Switch | 本地 App / CLI / IDE Extension 共享 Codex 配置；Web / cloud 单独确认 | 用当前 Codex 入口只读测试 |
 | Claude Code | [Claude Code](/tools/agents/claude-code) | 先试 CC Switch | 需要确认当前入口和协议支持 | 只读测试，核对 Key 和模型名 |
 | Gemini CLI | [Gemini CLI](/tools/agents/gemini-cli) | 先试 CC Switch | 需要确认当前版本 Provider 配置 | 只读测试，核对控制台记录 |
-| Codex | [Codex](/tools/agents/codex-cli) | 先试 CC Switch | CLI、App、IDE、Web 需分开确认 | 只读测试，不外推到其他入口 |
 | Hermes Agent | [Hermes Agent](/tools/agents/hermes) | 先确认官方配置 | 待验证路径，只记录验证前检查项 | 不写长期配置，先做只读测试 |
 | OpenAI SDK | [OpenAI SDK](/tools/sdk/openai) | 手动配置 | 后端、脚本或 SDK 场景 | 确认 `model` + `messages` 请求结构 |
 
@@ -39,16 +39,17 @@
 
 ## 命令行 Agent：优先 CC Switch
 
-CC Switch 适合 Claude Code、Gemini CLI、Codex 等 Agent 工具。它能减少重复填写 API Key、Base URL 和模型名，也方便切换 Provider。
+CC Switch 适合 Codex、Claude Code、Gemini CLI 等 Agent 工具。它能减少重复填写 API Key、Base URL 和模型名，也方便切换 Provider。
 
 基本流程：
 
-1. 在 CC Switch 新增 Arqel Provider。
-2. 填入 API Key、Base URL、模型名。
-3. 选择一个 Agent 启用这个 Provider。
-4. 重启该 Agent。
-5. 发送只读问题。
-6. 回 Arqel 控制台核对请求记录。
+1. 在 CC Switch 的应用切换器里选择目标 Agent，例如 Codex。
+2. 在该 Agent 页面添加 Arqel Provider。
+3. 填入 API Key、Base URL、模型名。
+4. 启用这个 Provider。
+5. 按目标 Agent 的要求重启终端、Reload Window 或重启应用。
+6. 发送只读问题。
+7. 回 Arqel 控制台核对请求记录。
 
 如果你的界面和文档不同，以当前 CC Switch 和目标工具界面为准。
 
@@ -83,7 +84,7 @@ Cursor 主要是桌面编辑器，通常先在 Cursor 自己的 Models、API、O
 - OpenAI-compatible 只表示当前文档覆盖的 Bearer 鉴权和 Chat Completions 基础文本请求格式，不自动包含 Streaming、Tool calling、Responses API、Embeddings 或其他端点。
 - Claude Code 可能要求非 OpenAI-compatible 协议或经过验证的适配路径；这不代表 Arqel 已支持该协议。
 - Gemini CLI 可能要求 Gemini 原生协议或当前版本提供的特定 Provider 配置；这不代表 Arqel 已支持该协议。
-- Codex 的 CLI、App、IDE Extension、Web/cloud 入口不一定共享 Provider 配置。
+- Codex 的本地 App、CLI、IDE Extension 共享 Codex Provider 配置；Codex Web / cloud 和云端集成不要默认套用本地配置。
 - CC Switch 可以管理 Provider、routing/proxy 和工具配置，但不要默认把它当作通用协议转换器。
 
 工具能回复不够。最终以 Arqel 控制台请求记录为准。

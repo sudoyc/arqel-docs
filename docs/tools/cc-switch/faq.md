@@ -5,10 +5,11 @@
 按顺序排查：
 
 1. 是否点击了 Enable / 启用。
-2. 是否重启了对应 CLI。
-3. 是否重启了 VS Code 插件。
-4. 当前运行的是 Windows 里的 CLI，还是 WSL 里的 CLI。
-5. Provider 里 Base URL、API Key、模型名是否填写正确。
+2. 是否在正确的应用页面启用了 Provider，例如 Codex 页面、Claude 页面或 Gemini 页面。
+3. 是否重启了对应 CLI。
+4. 是否重启了 VS Code 插件。
+5. 当前运行的是 Windows 里的 CLI，还是 WSL 里的 CLI。
+6. Provider 里 Base URL、API Key、模型名是否填写正确。
 
 ## 我还能切回官方登录吗？
 
@@ -30,5 +31,5 @@
 
 - [CC Switch 总览](/tools/cc-switch/)
 - [CC Switch 安装](/tools/cc-switch/install)
-- [CC Switch 添加 Arqel Provider](/tools/cc-switch/provider)
+- [CC Switch 按应用添加 Arqel Provider](/tools/cc-switch/provider)
 - [CC Switch 应用于各 Agent](/tools/cc-switch/agents)

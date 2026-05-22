@@ -52,7 +52,7 @@ POST /chat/completions
 | Embeddings | 未确认 | 不要假设 `/embeddings` 可用 |
 | Images / Audio / 多模态输入 | 未确认 | 以控制台和产品说明为准 |
 | Responses API / Models list | 未确认 | 不要把其他平台端点直接迁移过来 |
-| Anthropic-compatible / Gemini-compatible / Codex-specific 协议 | 未确认 | 不要作为 Arqel 能力编写生产配置 |
+| Agent 专用或非 OpenAI 请求协议 | 未确认 | 不要作为 Arqel 能力编写生产配置 |
 
 “未确认”表示本站当前没有把该能力作为稳定接入面文档化。需要这些能力时，请使用独立测试 Key 验证，并等待产品或后端确认后再进入生产服务。
 

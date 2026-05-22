@@ -1,14 +1,27 @@
-# CC Switch 添加 Arqel Provider
+# CC Switch 按应用添加 Arqel Provider
 
-这一页只讲怎么把 Arqel 加进 CC Switch。
+这一页只讲怎么把 Arqel 加进 CC Switch。CC Switch 的 Provider 是按应用管理的：先选择 Codex、Claude Code、Gemini CLI 等目标应用，再在当前应用页面添加 Provider。
 
-## 先准备什么
+## Arqel 接入三要素
 
 - Arqel API Key。
 - Arqel Base URL。
 - 一个具体可用的模型名。
 
 这些信息都以 Arqel 控制台当前显示为准。API Key 只复制到本机工具或安全配置里，不要放进截图、群聊或共享文档。
+
+## 先选择应用
+
+在 CC Switch 顶部应用切换器里选择你要接入的工具：
+
+| 你要接入 | 先选择 |
+| --- | --- |
+| Codex CLI | Codex |
+| Claude Code | Claude Code |
+| Gemini CLI | Gemini CLI |
+| OpenCode / OpenClaw | 对应应用 |
+
+切换后，Provider 列表会显示当前应用的 Provider。应用专属 Provider 只作用于当前选中的应用；如果你在 Claude Code 页面添加 Provider，不会自动变成 Codex 的 Provider。
 
 ## 新增 Provider
 
@@ -33,17 +46,17 @@
 
 操作步骤：
 
-1. 点击 Add Provider 或新增 Provider。
-2. 选择预设或 Custom Provider。
-3. 填入 Provider 名称。
-4. 填入 Arqel API Key。
-5. 填入 Arqel Base URL。
-6. 填入具体模型名。
-7. 保存。
-8. 点击 Enable 或切换到该 Provider。
+1. 先确认顶部应用切换器已经选中目标应用。
+2. 点击 Add Provider 或新增 Provider。
+3. 选择应用专属 Provider。
+4. 选择预设或 Custom Provider。
+5. 填入 Provider 名称。
+6. 填入 Arqel API Key。
+7. 填入 Arqel Base URL。
+8. 填入具体模型名。
+9. 保存。
+10. 点击 Enable 或切换到该 Provider。
 
 ::: warning
 模型名必须填写 Arqel 控制台里可用的具体名称。不要使用不存在的模型名、其他平台别名或文档中的占位文字。
-
-CC Switch 可以管理 Provider 和路由配置，但不代表 Arqel 自动兼容所有 Agent 协议。保存后请逐个 Agent 做只读测试，并回到 Arqel 控制台核对请求记录。
 :::

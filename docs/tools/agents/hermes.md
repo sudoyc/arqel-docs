@@ -19,7 +19,7 @@ Hermes Agent 是一个需要单独确认版本、配置项和协议的 Agent 路
 
 如果以上任意一项不确定，不要写入长期配置。先用 CC Switch 或 Hermes 自身的临时/测试方式验证。
 
-Hermes 不适合写成小白教程。看到 CC Switch 里有 Hermes 入口，也只能说明它可能被管理；具体能不能接 Arqel，还要看 Hermes 当前版本和协议支持。
+Hermes 当前更适合已经在使用该工具的人按版本核对配置。看到 CC Switch 里有 Hermes 入口，也只能说明它可能被管理；具体能不能接 Arqel，还要看 Hermes 当前版本和协议支持。
 
 ## 可能需要核对的本地项
 
@@ -37,8 +37,8 @@ Hermes 不适合写成小白教程。看到 CC Switch 里有 Hermes 入口，也
 如果你通过 CC Switch 管理 Hermes：
 
 1. 安装并打开 CC Switch。
-2. 添加 Arqel Provider，填写 API Key、Base URL 和具体模型名。
-3. 切到 Hermes Agent 应用。
+2. 切到 Hermes Agent 应用。
+3. 在 Hermes Agent 页面添加 Arqel Provider，填写 API Key、Base URL 和具体模型名。
 4. 启用 Arqel Provider 或对应 routing/proxy 配置。
 5. 重启 Hermes Agent。
 6. 发送只读测试问题。
@@ -48,7 +48,7 @@ Hermes 不适合写成小白教程。看到 CC Switch 里有 Hermes 入口，也
 只读测试示例：
 
 ```text
-请说明当前工作区的目录结构，不要修改任何文件。
+请说明当前项目是什么，不要修改任何文件。
 ```
 
 ## 确认真的走了 Arqel

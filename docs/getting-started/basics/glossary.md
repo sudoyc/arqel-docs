@@ -81,7 +81,7 @@ Node.js 的包管理器之一，用来安装 JavaScript 工具。
 
 ## 产品入口 / 使用界面
 
-同一个产品品牌下可能有 CLI、桌面 App、IDE 插件、网页端或云端 Agent。它们不一定共享同一套配置。
+同一个产品品牌下可能有 CLI、桌面 App、IDE 插件、网页端或云端 Agent。它们不一定共享同一套配置；但如果工具明确说明共享，就按工具自己的规则处理。例如 Codex 的本地 App、CLI、IDE Extension 共享同一套 Codex 配置。
 
 ## Arqel Provider
 

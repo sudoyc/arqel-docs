@@ -22,11 +22,11 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: '快速教程',
+        text: '入门',
         collapsed: false,
         items: [
           { text: '入口总览', link: '/getting-started/' },
-          { text: '新手入门（Windows）', link: '/getting-started/agent-quickstart' },
+          { text: '新手入门：Codex + CC Switch', link: '/getting-started/agent-quickstart' },
           { text: '接入检查清单', link: '/getting-started/troubleshooting/checklist' },
           {
             text: '准备知识',
@@ -51,19 +51,19 @@ export default defineConfig({
               { text: '成功和失败示例', link: '/getting-started/troubleshooting/success-and-failure-examples' }
             ]
           },
-          {
-            text: '参考：电脑环境',
-            collapsed: true,
-            items: [
-              { text: '环境总览', link: '/setup/' },
-              { text: '终端基础', link: '/setup/terminal-basics' },
-              { text: 'Windows 环境选择', link: '/setup/which-environment' },
-              { text: 'macOS', link: '/setup/macos' },
-              { text: 'Windows', link: '/setup/windows' },
-              { text: 'Linux / WSL', link: '/setup/linux-wsl' },
-              { text: '环境变量与安全', link: '/setup/env-vars' }
-            ]
-          }
+        ]
+      },
+      {
+        text: '环境准备',
+        collapsed: true,
+        items: [
+          { text: '环境总览', link: '/setup/' },
+          { text: '终端基础', link: '/setup/terminal-basics' },
+          { text: 'Windows 环境选择', link: '/setup/which-environment' },
+          { text: 'macOS', link: '/setup/macos' },
+          { text: 'Windows', link: '/setup/windows' },
+          { text: 'Linux / WSL', link: '/setup/linux-wsl' },
+          { text: '环境变量与安全', link: '/setup/env-vars' }
         ]
       },
       {

@@ -1,6 +1,6 @@
 # Base URL 和模型名
 
-API Key 只是凭证。要真正发送请求，你还需要填对 Base URL 和模型名。
+API Key 只是凭证。要真正发送请求，你还需要填对 Base URL 和模型名。本页告诉你在控制台里从哪里找到二者；技术细节见 [Base URL 概念](/concepts/base-url)。
 
 ## 到哪里找 Base URL
 

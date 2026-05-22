@@ -1,88 +1,42 @@
 # AGENTS.md
 
-## Project
+## Project Shape
 
-This repository contains the standalone Arqel documentation site for `docs.arqel.net`.
-
-- Framework: VitePress
-- Package manager: pnpm
-- Docs root: `docs/`
-- VitePress config: `docs/.vitepress/config.ts`
-- Theme files: `docs/.vitepress/theme/`
-- Build output: `docs/.vitepress/dist`
-- Hosting target: Cloudflare Workers static assets (current), with Cloudflare Pages as an optional future target
+- Standalone VitePress docs site for `docs.arqel.net`; docs live under `docs/`.
+- VitePress config and sidebar are in `docs/.vitepress/config.ts`; homepage copy is in `docs/.vitepress/theme/components/DocsHome.vue`, not `docs/index.md`.
+- Build output is `docs/.vitepress/dist`; `wrangler.toml` serves that directory as Cloudflare Workers static assets.
 
 ## Commands
 
-Use pnpm only.
+- Use pnpm only: lockfile is `pnpm-lock.yaml` and scripts are only in the root `package.json`.
+- Install: `pnpm install`
+- Dev server: `pnpm run dev` (`vitepress dev docs --host 0.0.0.0`)
+- Build / required verification: `pnpm run build`
+- Preview: `pnpm run preview`
+- Deploy: `pnpm run deploy` runs `wrangler deploy`; do not deploy unless explicitly asked.
+- There are no repo-defined lint, test, typecheck, or CI workflows at the time of writing.
 
-```bash
-pnpm install
-pnpm run dev
-pnpm run build
-pnpm run preview
-```
+## Documentation Conventions
 
-Cloudflare Workers should use:
+- Write for near-zero-background users first; prefer concrete steps and verification over abstract explanation.
+- Keep unreplaced screenshots as VitePress details blocks containing `图片占位`; never include full API keys or private customer data in screenshots or examples.
+- Use `Arqel` and `CC Switch` exactly; keep the CC Switch URL slug as `cc-switch`.
+- Treat Claude Code, Gemini CLI, Codex, Cursor, Hermes, and CC Switch as product surfaces, not generic CLIs.
+- Use `Codex` for the product family; use `Codex CLI` only when referring specifically to the terminal `codex` command.
+- Do not claim config sharing between product surfaces unless the docs already verify it. The current Codex quickstart explicitly says Codex App, Codex CLI, and Codex IDE Extension share local Codex Provider config.
+- Model names should be described as concrete values copied from the Arqel console; avoid old “auto route” phrasing.
+- Do not claim Arqel supports Anthropic-compatible, Gemini-compatible, or Codex-specific protocols unless product/backend confirmation exists.
+- Do not claim CC Switch guarantees Arqel compatibility for every Agent; it can manage providers/routing, but Arqel compatibility still needs validation.
+- Do not add Hermes install commands until the official Hermes Agent source is confirmed; preserve the existing warning posture on `docs/tools/agents/hermes.md`.
 
-```text
-Install command: pnpm install
-Build command: pnpm run build
-Deploy command: pnpm run deploy
-```
+## Routes And Links
 
-The deploy script uses `wrangler deploy` and the static assets config in `wrangler.toml`.
+- Current tool routes are nested: `docs/tools/agents/*`, `docs/tools/sdk/*`, and `docs/tools/cc-switch/*`.
+- Avoid reintroducing old flat links such as `/tools/cursor`, `/tools/claude-code`, `/tools/gemini-cli`, `/tools/codex-cli`, `/tools/openai-sdk`, or `/tools/compare`.
+- When adding or moving docs pages, update `docs/.vitepress/config.ts` sidebar/nav in the same change.
 
-If the project is recreated as Cloudflare Pages later, Pages should use:
+## Pre-Finish Checks
 
-```text
-Install command: pnpm install
-Build command: pnpm run build
-Output directory: docs/.vitepress/dist
-```
-
-## Documentation Rules
-
-- Write for near-zero-background users first.
-- Prefer clear step-by-step instructions over abstract descriptions.
-- Keep screenshots as explicit `图片占位` blocks until real images are available.
-- Use `Arqel` consistently as the product name.
-- Use `CC Switch` as the user-facing product name. Keep URL slug `cc-switch`.
-- Use `Codex` as the product-family name. Use `Codex CLI` only when specifically referring to the terminal `codex` command.
-- Treat Claude Code, Gemini CLI, Codex, Cursor, and Hermes as product families/surfaces, not just CLI tools.
-- Do not imply that one product surface shares configuration with another unless official docs state it.
-- Model names should be described as concrete names copied from the Arqel console. Avoid repeatedly framing this as an “auto route” issue.
-- Do not claim Arqel supports Anthropic-compatible, Gemini-compatible, or Codex-specific protocols unless product/backend confirms it.
-- Do not claim CC Switch guarantees Arqel compatibility for every Agent. CC Switch can manage providers and routing/proxy features, but Arqel-specific compatibility still needs validation.
-- Do not provide Hermes installation commands until the official Hermes Agent source is confirmed.
-
-## Verification
-
-Before finishing documentation changes, run:
-
-```bash
-pnpm run build
-```
-
-Recommended residue checks:
-
-```text
-auto route
-Auto Route
-自动路由
-不提供 auto
-/tools/cursor
-/tools/claude-code
-/tools/gemini-cli
-/tools/codex-cli
-/tools/openai-sdk
-/tools/compare
-```
-
-The path checks above should not match old flat routes. Current valid routes are under `docs/tools/agents/` and `docs/tools/sdk/`.
-
-## Safety
-
-- Never commit real API keys, `.env` files, screenshots with full keys, or private customer data.
-- Do not remove warning or security content just to make pages shorter.
-- Do not deploy or push unless explicitly requested.
+- Run `pnpm run build` before finishing documentation changes.
+- For route/wording cleanup, search for stale terms: `auto route`, `Auto Route`, `自动路由`, `不提供 auto`, and the old flat `/tools/...` paths listed above.
+- Do not remove warnings, security guidance, or “待验证” caveats just to shorten pages.
