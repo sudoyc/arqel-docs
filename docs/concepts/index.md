@@ -1,6 +1,6 @@
 # 核心概念
 
-理解 Arqel 接入时，先掌握这些概念：
+这页解释接入 Arqel 时反复出现的几个基础概念。你不必一次看完，遇到不认识的术语时再回来翻。
 
 - [Base URL](/concepts/base-url)：客户端请求的 API 地址。
 - [模型选择](/concepts/models-and-routing)：你调用哪个具体模型，以及模型名应该从哪里复制。

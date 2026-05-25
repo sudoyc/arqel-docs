@@ -1,6 +1,6 @@
 # 环境准备总览
 
-这一部分帮助你判断电脑需要准备到什么程度。接 Agent、接 SDK、调试 API，所需环境不一样。
+这页告诉你用 Cursor、Claude Code、Gemini CLI、Codex、CC Switch 等工具之前，电脑需要准备到什么程度。接 Agent、接 SDK、调试 API，所需环境不一样。
 
 如果你几乎没有编程基础，优先按 [新手入门](/getting-started/agent-quickstart) 走。环境页只解释电脑、终端和配置位置，不替代具体工具教程。
 

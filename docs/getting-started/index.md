@@ -1,8 +1,8 @@
-# 开始使用 Arqel
+# 入口总览
 
-这部分帮助你选择接入方式。Arqel 文档主要讲各个工具怎么接入：优先使用 CC Switch，必要时再手动修改配置。
+这页帮你选一条适合你的接入路线。Arqel 文档覆盖 Cursor、Claude Code、Gemini CLI、Codex、CC Switch 等工具的接入方式，整体原则是：优先用 CC Switch 管理 Provider，必要时再手动配置。
 
-如果你是 Windows 新手，直接看 [新手入门：Codex + CC Switch](/getting-started/agent-quickstart)。
+如果你是 Windows 新手，直接从 [新手入门：Codex + CC Switch](/getting-started/agent-quickstart) 开始。已经知道自己要用哪个工具，请直接看下面的表格。
 
 ## 推荐入口
 
@@ -28,17 +28,17 @@ API Key、Base URL 和模型名是接入 Arqel 的三个必填项，后文统一
 
 ## 文档怎么读
 
-- **新手入门**：给 Windows 新手用户，从准备 Codex 入口，到用 CC Switch 确认请求记录。
-- **工具接入**：说明 Cursor、Claude Code、Gemini CLI、Codex、CC Switch 等入口的接入方式。
-- **API 参考**：给后端、脚本和 SDK 用户查接口格式，不是新手接 Agent 的必经步骤。
-- **概念 / 排障**：遇到问题时再看。
+- **新手入门**：给 Windows 新手用户，从准备 Codex 入口，到用 CC Switch 确认请求记录。每步都说明"做到什么程度算成功"。
+- **工具接入**：说明 Cursor、Claude Code、Gemini CLI、Codex、CC Switch 等入口的接入方式，按产品入口区分，不混用。
+- **API 参考**：给后端、脚本和 SDK 用户查接口格式。新手接 Agent 不是必经步骤。
+- **概念 / 排障**：概念可以选看，排障页遇到问题时再看。
 
 ## 接入顺序
 
 1. 新手先从 Codex 开始，按教程接入 Arqel。
 2. 命令行 Agent 优先用 CC Switch。
-3. 在 CC Switch 里先选择目标应用，例如 Codex，再添加 Arqel Provider。
-4. 如果 CC Switch 不适合，再按工具页的 macOS / Windows / Linux 手动配置说明处理。
+3. 在 CC Switch 里先选择目标应用（例如 Codex），再添加 Arqel Provider。
+4. 如果 CC Switch 不适合，再按对应工具页的 macOS / Windows / Linux 手动配置说明处理。
 5. 用只读问题验证接入。
 6. 回到 Arqel 控制台核对请求时间、Key 名称和模型名。
 

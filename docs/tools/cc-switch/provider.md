@@ -23,6 +23,8 @@
 
 切换后，Provider 列表会显示当前应用的 Provider。应用专属 Provider 只作用于当前选中的应用；如果你在 Claude Code 页面添加 Provider，不会自动变成 Codex 的 Provider。
 
+切换后请看页面标题、当前应用标签或 Provider 列表范围，确认你正在编辑目标应用。不要只凭窗口里曾经出现过某个应用名称判断当前页面。
+
 ## 新增 Provider
 
 不同版本界面文字可能略有差异，但核心字段通常类似：
@@ -56,6 +58,8 @@
 8. 填入具体模型名。
 9. 保存。
 10. 点击 Enable 或切换到该 Provider。
+
+保存后回到当前应用的 Provider 列表，确认新建的 Arqel Provider 已出现，并处于 Enabled、Active、Current 或类似状态。之后再重启目标 Agent 做只读验证。
 
 ::: warning
 模型名必须填写 Arqel 控制台里可用的具体名称。不要使用不存在的模型名、其他平台别名或文档中的占位文字。

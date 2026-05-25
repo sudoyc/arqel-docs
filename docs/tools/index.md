@@ -1,8 +1,8 @@
 # 工具接入
 
-这部分说明如何把 Arqel 接入 Cursor、Claude Code、Gemini CLI、Codex、Hermes Agent 等工具。
+这页帮你根据自己使用的工具选择对应接入页面。整个工具接入区的原则是：命令行 Agent 优先用 CC Switch 管理 Provider；Cursor 这类桌面编辑器优先看应用内设置；如果目标工具不适合用 CC Switch，再手动修改配置。
 
-推荐顺序是：命令行 Agent 优先用 CC Switch 管理 Provider；Cursor 这类桌面编辑器优先看应用内设置；如果目标工具不适合用 CC Switch，再手动修改配置。
+这里说的"工具"指 Cursor、Claude Code、Gemini CLI、Codex、Hermes Agent 等具体产品入口，不是泛指普通 CLI。
 
 ## 选择入口
 

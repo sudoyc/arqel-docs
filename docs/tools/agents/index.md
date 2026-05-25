@@ -1,6 +1,8 @@
 # Agent 接入
 
-Agent 工具会读项目、执行命令或修改文件。接入 Arqel 时，推荐先用 CC Switch 管理 Provider，再按工具逐个验证。Windows 新手建议先从 Codex 开始。
+Agent 是指能读取项目、执行命令或修改文件的 AI 工具。这页帮你在 Cursor、Claude Code、Gemini CLI、Codex、Hermes Agent 中快速定位对应接入步骤。
+
+接入 Arqel 时，推荐先用 CC Switch 管理 Provider，再按工具逐个验证。Windows 新手建议先从 Codex 开始。
 
 如果你是 Windows 新手，先看 [新手入门](/getting-started/agent-quickstart)。如果你已经知道要用哪个工具，直接进入对应工具页。
 

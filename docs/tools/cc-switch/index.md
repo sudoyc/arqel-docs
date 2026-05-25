@@ -5,7 +5,7 @@ CC Switch 是一个跨平台桌面工具，用来统一管理 Claude Code、Code
 如果你是 Windows 新手，可以直接看 [新手入门](/getting-started/agent-quickstart)。本文作为 CC Switch 的补充参考。
 
 ::: info 第三方工具版本
-CC Switch 和各 Agent 的界面、字段名称、配置路径可能随版本变化。如果你的界面和截图占位描述不同，请以当前 CC Switch 和目标 Agent 的界面为准。
+CC Switch 和各 Agent 的界面、字段名称、配置路径可能随版本变化。如果你的界面和本文文字不同，请以当前 CC Switch 和目标 Agent 的界面为准。
 :::
 
 ## 推荐路径

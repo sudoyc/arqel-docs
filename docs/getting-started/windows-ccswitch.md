@@ -1,8 +1,8 @@
 # Windows 工具接入：用 CC Switch 管理 Arqel Provider
 
-这页保留给已经熟悉 Windows 工具的用户作参考。完全新手请先看 [新手入门：Codex + CC Switch](/getting-started/agent-quickstart)。
+这页给已经熟悉 Windows 工具的用户作多 Agent 管理的参考。完全新手请先看 [新手入门：Codex + CC Switch](/getting-started/agent-quickstart)。
 
-本文只补充 CC Switch 管理多个 Agent 时的判断点，不再重复每一步截图教程。
+本文补充 CC Switch 管理多个 Agent 时的判断点和验证方法，不再重复每一步教程。
 
 ## 适合谁
 
