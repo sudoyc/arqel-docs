@@ -48,7 +48,7 @@ Windows Subsystem for Linux。让你在 Windows 里运行 Linux 环境。
 
 ## Base URL
 
-API 请求的根地址，例如 `https://api.arqel.dev/v1`。
+API 请求的根地址，例如 `https://arqel.net`。
 
 ## API Key
 

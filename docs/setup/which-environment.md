@@ -8,7 +8,7 @@ Windows 用户最容易遇到的问题是：同一台电脑里其实有多个环
 
 | 场景 | 实际环境 | 配置通常写在哪里 |
 | --- | --- | --- |
-| PowerShell 里运行 `claude` / `gemini` / `codex` | Windows 原生 | Windows 用户目录 |
+| PowerShell 里运行 `claude` / `codex` | Windows 原生 | Windows 用户目录 |
 | WSL Ubuntu 里运行 CLI | WSL Linux | WSL 用户目录 |
 | VS Code Remote - WSL 打开项目 | WSL Linux | WSL 用户目录 |
 | Cursor Windows 桌面应用 | Windows 原生 | Cursor 应用设置或 Windows 用户目录 |
@@ -27,7 +27,7 @@ Windows 用户最容易遇到的问题是：同一台电脑里其实有多个环
 
 适合：
 
-- 长期使用 Claude Code、Gemini CLI、Codex 或其他需要 shell/MCP 的 Agent。
+- 长期使用 Claude Code、Codex 或其他需要 shell/MCP 的 Agent。
 - 需要运行 MCP、shell 脚本或类 Linux 工具。
 - 项目本身更接近 Linux 服务端环境。
 - Windows 原生环境里遇到路径、权限、stdio 或依赖兼容问题。
@@ -58,7 +58,6 @@ Windows 版 CC Switch 通常管理 Windows 用户目录里的配置。WSL 里的
 
 ```text
 /home/you/.codex
-/home/you/.gemini
 ```
 
 所以：
@@ -88,7 +87,7 @@ Windows 版 CC Switch 通常管理 Windows 用户目录里的配置。WSL 里的
 如果你不确定：
 
 1. 用 Cursor：先按 Cursor Windows 桌面应用配置。
-2. 用 Claude Code / Gemini CLI / Codex 做项目开发：优先考虑 WSL。
+2. 用 Claude Code / Codex 做项目开发：优先考虑 WSL。
 3. 已经用 CC Switch 管理 Windows CLI：先确认你的 CLI 不是装在 WSL 里。
 4. 后端、脚本或 SDK 调试 API：再按 API 参考选择 PowerShell 或 WSL。
 

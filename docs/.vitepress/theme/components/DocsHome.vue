@@ -9,7 +9,7 @@ const entryCards = [
   {
     label: '工具',
     title: '工具接入',
-    detail: '按产品入口区分 Cursor、Claude Code、Gemini CLI、Codex 和 CC Switch。',
+    detail: '按产品入口区分 Cursor、Claude Code、Codex 和 CC Switch。',
     href: '/tools/'
   },
   {
@@ -30,7 +30,7 @@ const entryCards = [
           接入 Arqel
         </h1>
         <p class="docs-home-subtitle docs-home-reveal docs-home-d3">
-          为 Cursor、Claude Code、Codex、Gemini CLI 等 AI 工具配置 Arqel API
+          为 Cursor、Claude Code、Codex 等 AI 工具配置 Arqel API
         </p>
         <p class="docs-home-description docs-home-reveal docs-home-d4">
           工具接入优先使用 CC Switch；不适合时再按 macOS、Windows、Linux / WSL 的手动配置说明处理。每步都有验证方法，最终以 Arqel 控制台请求记录为准。

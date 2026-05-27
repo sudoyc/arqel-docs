@@ -39,7 +39,7 @@ npm -v
 
 - Node.js 是运行 JavaScript 工具的环境。
 - npm 是 Node.js 自带的软件包安装器。
-- 一些 AI CLI 会通过 npm 安装，例如 Gemini CLI 或 Codex CLI。Claude Code 当前官方文档优先提供原生安装脚本、Homebrew 和 WinGet 等方式。
+- 一些 AI CLI 会通过 npm 安装，例如 Codex CLI。Claude Code 当前官方文档优先提供原生安装脚本、Homebrew 和 WinGet 等方式。
 
 如果 `node -v` 没有输出版本号，说明 Node.js 没安装成功，或者安装后终端没有重启。
 
@@ -88,7 +88,6 @@ code --version
 不同工具的官方安装方式不同。下面只保留常见示例，具体请以对应工具页为准。
 
 ```powershell
-npm install -g @google/gemini-cli
 npm install -g @openai/codex
 ```
 
@@ -102,7 +101,6 @@ irm https://claude.ai/install.ps1 | iex
 
 ```powershell
 claude --version
-gemini --version
 codex --version
 ```
 
@@ -120,14 +118,14 @@ PowerShell 当前会话临时设置：
 
 ```powershell
 $env:ARQEL_API_KEY="sk-..."
-$env:ARQEL_BASE_URL="https://api.arqel.dev/v1"
+$env:ARQEL_BASE_URL="https://arqel.net"
 ```
 
 长期设置：
 
 ```powershell
 setx ARQEL_API_KEY "sk-..."
-setx ARQEL_BASE_URL "https://api.arqel.dev/v1"
+setx ARQEL_BASE_URL "https://arqel.net"
 ```
 
 `setx` 后需要重新打开终端才会生效。

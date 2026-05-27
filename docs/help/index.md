@@ -9,7 +9,7 @@
 - [模型名](#模型名)
 - [Windows / WSL](#windows--wsl)
 - [CC Switch](#cc-switch)
-- [工具接入](#cursor--claude-code--gemini-cli--codex)
+- [工具接入](#cursor--claude-code--codex)
 - [请求失败](#请求失败)
 - [安全](#安全)
 
@@ -27,7 +27,7 @@
 
 - 本地测试一个 Key。
 - Cursor 一个 Key。
-- Claude Code / Gemini CLI / Codex 各自一个 Key。
+- Claude Code / Codex 各自一个 Key。
 - 生产服务单独一个 Key。
 
 这样更容易定位用量，也方便单独停用有风险的 Key。
@@ -45,7 +45,7 @@ Windows PowerShell、WSL、macOS 终端、VS Code 内置终端可能读取不同
 填 Arqel 控制台显示的 API 根地址。示例可能长这样：
 
 ```text
-https://api.arqel.dev/v1
+https://arqel.net
 ```
 
 实际值以控制台为准。
@@ -96,7 +96,7 @@ $ARQEL_BASE_URL/chat/completions
 
 ### 我应该用 PowerShell 还是 WSL？
 
-如果你主要使用 Cursor 这类桌面工具，先用 PowerShell 或工具自己的设置界面。如果你要长期运行 Claude Code、Gemini CLI、Codex、MCP 或类 Linux 工具，WSL 通常更稳定。
+如果你主要使用 Cursor 这类桌面工具，先用 PowerShell 或工具自己的设置界面。如果你要长期运行 Claude Code、Codex、MCP 或类 Linux 工具，WSL 通常更稳定。
 
 详见 [Windows 环境选择](/setup/which-environment)。
 
@@ -118,7 +118,7 @@ $ARQEL_BASE_URL/chat/completions
 
 不要默认这样理解。CC Switch 主要负责配置管理和写入。目标工具是否能使用 Arqel，仍取决于该工具当前版本支持的 Provider 类型和协议。
 
-## Cursor / Claude Code / Gemini CLI / Codex
+## Cursor / Claude Code / Codex
 
 ### Cursor 能接 Arqel 吗？
 
@@ -127,10 +127,6 @@ $ARQEL_BASE_URL/chat/completions
 ### Claude Code 能直接用 OpenAI-compatible Base URL 吗？
 
 不能直接假设。Claude Code 可能要求非 OpenAI-compatible 协议或已验证的适配路径；Arqel 是否支持该路径需要以产品确认或实测为准。
-
-### Gemini CLI 能直接用 OpenAI-compatible Base URL 吗？
-
-不能直接假设。Gemini CLI 可能需要 Gemini 原生协议、版本特定 Provider 配置或经过验证的适配路径；Arqel 是否支持该路径需要以产品确认或实测为准。
 
 ### Codex 为什么配置方式变化？
 

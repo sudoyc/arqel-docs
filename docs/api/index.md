@@ -2,7 +2,7 @@
 
 本部分面向后端、脚本和 SDK 用户，说明 Arqel 的鉴权方式、基础 Chat Completions 请求格式和调用示例。
 
-如果你是新手，只想接入 Cursor、Claude Code、Gemini CLI、Codex 或 CC Switch，请先看 [新手入门](/getting-started/agent-quickstart)。这一部分不是 Agent 入门的必经步骤。
+如果你是新手，只想接入 Cursor、Claude Code、Codex 或 CC Switch，请先看 [新手入门](/getting-started/agent-quickstart)。这一部分主要给后端、脚本、SDK 和深度排障使用。
 
 ::: warning
 每次请求都要填写 Arqel 控制台中显示的具体模型名。不要把模型家族名、其他平台别名或示例占位文字直接填入请求。
@@ -11,7 +11,7 @@
 ## 基础信息
 
 ```text
-Base URL: 以 Arqel 控制台显示为准，例如 https://api.arqel.dev/v1
+Base URL: 以 Arqel 控制台显示为准，例如 https://arqel.net
 Auth: Authorization: Bearer <API Key>
 ```
 

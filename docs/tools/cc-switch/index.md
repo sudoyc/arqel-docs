@@ -1,6 +1,6 @@
 # CC Switch 参考
 
-CC Switch 是一个跨平台桌面工具，用来统一管理 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw、Hermes Agent 等 Agent 工具的 Provider、MCP、Prompts 和 Skills。
+CC Switch 是一个跨平台桌面工具，用来统一管理 Claude Code、Codex、Hermes Agent 等 Agent 工具的 Provider、MCP、Prompts 和 Skills。
 
 如果你是 Windows 新手，可以直接看 [新手入门](/getting-started/agent-quickstart)。本文作为 CC Switch 的补充参考。
 
@@ -29,20 +29,17 @@ CC Switch 和各 Agent 的界面、字段名称、配置路径可能随版本变
 | 情况 | 建议 |
 | --- | --- |
 | 只用 Cursor 或只用一个 SDK | 先手动配置，不必一开始安装 CC Switch |
-| 同时用 Codex、Claude Code、Gemini CLI | 适合使用 CC Switch 统一管理 Provider |
+| 同时用 Codex、Claude Code 等 Agent | 适合使用 CC Switch 统一管理 Provider |
 | 经常切换官方 Provider 和 Arqel Provider | 适合使用 CC Switch，减少手改配置 |
 | 需要管理 MCP、Prompts、Skills | 适合使用 CC Switch |
 | Windows 工具用户 | 直接看 [新手入门](/getting-started/agent-quickstart)，或继续阅读本文 |
 
 ## CC Switch 可管理的应用
 
-CC Switch 面向多个 Agent 工具提供配置管理入口，包括：
+CC Switch 面向多个 Agent 工具提供配置管理入口。本文只覆盖以下接入路径：
 
 - Claude Code
 - Codex
-- Gemini CLI
-- OpenCode
-- OpenClaw
 - Hermes Agent
 
 请按 [工具接入总览](/tools/) 的兼容状态矩阵逐个验证。
@@ -78,7 +75,7 @@ CC Switch 的常见能力包括：
 7. 按该 Agent 的要求重启终端或应用。
 8. 发送只读测试问题。
 9. 到 Arqel 控制台核对请求记录。
-10. 再逐个配置 Claude Code、Gemini CLI、Hermes Agent 等其他 Agent。
+10. 再逐个配置 Claude Code、Hermes Agent 等其他 Agent。
 
 不要一次性把所有 Agent 都切到 Arqel。逐个验证更容易定位问题。
 

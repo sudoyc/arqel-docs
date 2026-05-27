@@ -13,11 +13,8 @@
 | --- | --- | --- | --- |
 | Cursor | 桌面编辑器、Agent、Rules、MCP、Skills | 喜欢在编辑器里直接改代码的人 | Cursor 自己的设置、integrated terminal 里的 CLI、插件配置可能不是同一套 |
 | Claude Code | Terminal、IDE、Desktop Code tab、Web | 需要跨终端、IDE、桌面 App 做代码任务的人 | 可能要求非 OpenAI-compatible 协议或已验证适配路径 |
-| Gemini CLI | Terminal、VS Code companion、ACP-compatible IDE | 需要 Gemini 风格终端/IDE 工作流的人 | IDE 集成通常连接 CLI，需要确认 CLI 配置和 IDE 工作区一致 |
 | Codex | CLI、App、IDE Extension、Web/cloud、集成 | OpenAI 生态代码 Agent 用户 | 本地 App / CLI / IDE Extension 共享 Codex 配置；Web/cloud 和云端集成单独确认 |
 | Hermes Agent | Hermes、CC Switch managed app | 已在使用 Hermes 或通过 CC Switch 管理 Hermes 的人 | Hermes 官方配置和 Arqel 协议支持仍需确认 |
-| OpenCode | CC Switch managed app | 已使用 OpenCode 工作流的人 | Arqel 专属步骤未验证 |
-| OpenClaw | CC Switch managed app | 已使用 OpenClaw 工作流的人 | Arqel 专属步骤未验证 |
 | OpenAI SDK | 后端服务、脚本、应用 | 要在自己的应用里调用模型的人 | 不要把 Key 放在浏览器前端 |
 | CC Switch | 桌面管理工具 | 同时管理多个 Agent 配置的人 | 管理配置不等于所有协议都已通过 Arqel 实测 |
 
@@ -25,10 +22,10 @@
 
 - 你是 Windows 新手：先看 [新手入门](/getting-started/agent-quickstart)，默认从 Codex 开始。
 - 你只用 Cursor：先看 Cursor 自己的设置页。
-- 你更习惯终端：先看 Claude Code、Gemini CLI 或 Codex，并优先尝试 CC Switch。
+- 你更习惯终端：先看 Claude Code 或 Codex，并优先尝试 CC Switch。
 - 你会切换多个 Agent：先看 CC Switch。
 - 你要做自己的后端服务：先看 OpenAI SDK。
-- 你已经在用 Hermes、OpenCode 或 OpenClaw：先确认官方配置方式和 Arqel 协议支持，再做只读测试。
+- 你已经在用 Hermes：先确认官方配置方式和 Arqel 协议支持，再做只读测试。
 - 你使用桌面 App、网页端或 IDE 插件：先确认它是否真的读取本地配置；Codex 的本地 App / CLI / IDE Extension 属于同一套 Codex 配置。
 
 ## 选择提示

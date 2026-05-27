@@ -1,6 +1,6 @@
 # CC Switch 按应用添加 Arqel Provider
 
-这一页只讲怎么把 Arqel 加进 CC Switch。CC Switch 的 Provider 是按应用管理的：先选择 Codex、Claude Code、Gemini CLI 等目标应用，再在当前应用页面添加 Provider。
+这一页只讲怎么把 Arqel 加进 CC Switch。CC Switch 的 Provider 是按应用管理的：先选择 Codex、Claude Code 等目标应用，再在当前应用页面添加 Provider。
 
 ## Arqel 接入三要素
 
@@ -18,12 +18,12 @@
 | --- | --- |
 | Codex CLI | Codex |
 | Claude Code | Claude Code |
-| Gemini CLI | Gemini CLI |
-| OpenCode / OpenClaw | 对应应用 |
 
 切换后，Provider 列表会显示当前应用的 Provider。应用专属 Provider 只作用于当前选中的应用；如果你在 Claude Code 页面添加 Provider，不会自动变成 Codex 的 Provider。
 
 切换后请看页面标题、当前应用标签或 Provider 列表范围，确认你正在编辑目标应用。不要只凭窗口里曾经出现过某个应用名称判断当前页面。
+
+![在 CC Switch 顶部应用切换器中选择 Codex](/docs-media/getting-started/cc-switch-select-codex.webp)
 
 ## 新增 Provider
 
@@ -38,7 +38,7 @@
 | Provider 类型 | 按目标工具和 CC Switch 当前界面选择；如果该类型代表协议，必须先确认 Arqel 和目标工具都支持 |
 
 ::: warning Provider 类型不是协议转换承诺
-在 CC Switch 中看到 Claude、OpenAI-compatible、Gemini 等类型时，不要理解为 Arqel 自动支持这些协议。Provider 类型必须同时满足两件事：
+在 CC Switch 中看到不同 Provider 类型时，不要理解为 Arqel 自动支持这些协议。Provider 类型必须同时满足两件事：
 
 1. 目标工具当前版本会读取这个 Provider 类型。
 2. Arqel 或已验证适配层明确支持这个 Provider 类型对应的请求协议。
@@ -60,6 +60,8 @@
 10. 点击 Enable 或切换到该 Provider。
 
 保存后回到当前应用的 Provider 列表，确认新建的 Arqel Provider 已出现，并处于 Enabled、Active、Current 或类似状态。之后再重启目标 Agent 做只读验证。
+
+![在 Codex 页面进入新增 Provider，并确认 Arqel Provider 已启用](/docs-media/getting-started/cc-switch-add-provider.webp)
 
 ::: warning
 模型名必须填写 Arqel 控制台里可用的具体名称。不要使用不存在的模型名、其他平台别名或文档中的占位文字。

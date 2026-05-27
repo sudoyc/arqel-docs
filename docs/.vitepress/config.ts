@@ -5,6 +5,7 @@ export default defineConfig({
   description: 'Arqel 入门教程、工具接入、概念说明和常见帮助。',
   lang: 'zh-CN',
   cleanUrls: true,
+  srcExclude: ['tools/agents/gemini-cli.md'],
   head: [
     ['link', { rel: 'icon', href: '/favicon.svg' }],
     ['meta', { property: 'og:site_name', content: 'Arqel Docs' }],
@@ -90,7 +91,6 @@ export default defineConfig({
               { text: '手动配置参考', link: '/tools/agents/manual-config' },
               { text: 'Cursor', link: '/tools/agents/cursor' },
               { text: 'Claude Code', link: '/tools/agents/claude-code' },
-              { text: 'Gemini CLI', link: '/tools/agents/gemini-cli' },
               { text: 'Codex', link: '/tools/agents/codex-cli' },
               { text: 'Hermes Agent', link: '/tools/agents/hermes' }
             ]

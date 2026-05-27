@@ -88,7 +88,7 @@
 | 本地 API 测试 | `local-api-test` |
 | Cursor | `cursor-personal` |
 | Claude Code | `claude-code-dev` |
-| Gemini CLI | `gemini-cli-test` |
+| Codex | `codex-local` |
 | 生产后端 | `server-production` |
 
 不用的 Key 应及时停用或删除。临时测试 Key 用完后不要长期保留。

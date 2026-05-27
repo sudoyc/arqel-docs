@@ -51,7 +51,7 @@ Base URL 是客户端要请求的 API 根地址。
 示例：
 
 ```text
-https://api.arqel.dev/v1
+https://arqel.net
 ```
 
 实际地址以 Arqel 控制台为准。
@@ -70,7 +70,7 @@ https://api.arqel.dev/v1
 
 ## Arqel、工具和模型提供商的关系
 
-Arqel 是接入层，不是 Cursor、Claude Code、Gemini CLI 或 Codex 本身，也不是模型提供商本身。
+Arqel 是接入层，不是 Cursor、Claude Code 或 Codex 本身，也不是模型提供商本身。
 
 常见链路是：
 

@@ -3,7 +3,7 @@
 下面示例使用 OpenAI-compatible 的请求方式。实际 Base URL 和模型名以你的 Arqel 控制台为准。你可以把它当作 API 调试的基准样例。
 
 ::: tip
-如果你是新手，只想接入 Cursor、Claude Code、Gemini CLI、Codex 或 CC Switch，请先看 [新手入门](/getting-started/agent-quickstart)。这页属于 API 参考，不是 Agent 入门的必经步骤。
+如果你是新手，只想接入 Cursor、Claude Code、Codex 或 CC Switch，请先看 [新手入门](/getting-started/agent-quickstart)。这页属于 API 参考，不是 Agent 入门的必经步骤。
 :::
 
 ::: warning
@@ -17,7 +17,7 @@
 你需要提前准备：
 
 - 一个 Arqel API Key，例如 `sk-...`。
-- Arqel Base URL，例如 `https://api.arqel.dev/v1`。
+- Arqel Base URL，例如 `https://arqel.net`。
 - 一个控制台里显示可用的具体模型名。
 - 一个终端：macOS 终端、Windows PowerShell、Linux / WSL 终端都可以。
 
@@ -37,7 +37,7 @@ macOS / Linux / WSL：
 
 ```bash
 export ARQEL_API_KEY="sk-..."
-export ARQEL_BASE_URL="https://api.arqel.dev/v1"
+export ARQEL_BASE_URL="https://arqel.net"
 export ARQEL_MODEL="请替换为控制台里可用的模型名"
 ```
 
@@ -45,7 +45,7 @@ Windows PowerShell：
 
 ```powershell
 $env:ARQEL_API_KEY="sk-..."
-$env:ARQEL_BASE_URL="https://api.arqel.dev/v1"
+$env:ARQEL_BASE_URL="https://arqel.net"
 $env:ARQEL_MODEL="请替换为控制台里可用的模型名"
 ```
 
@@ -204,6 +204,5 @@ Authorization: Bearer <你的 API Key>
 
 - [Cursor 接入](/tools/agents/cursor)
 - [Claude Code 接入](/tools/agents/claude-code)
-- [Gemini CLI 接入](/tools/agents/gemini-cli)
 - [Codex 接入](/tools/agents/codex-cli)
 - [OpenAI SDK 接入](/tools/sdk/openai)

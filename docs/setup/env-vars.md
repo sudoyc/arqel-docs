@@ -18,7 +18,7 @@
 
 ```bash
 ARQEL_API_KEY="sk-..."
-ARQEL_BASE_URL="https://api.arqel.dev/v1"
+ARQEL_BASE_URL="https://arqel.net"
 ARQEL_MODEL="<从 Arqel 控制台复制的模型名>"
 ```
 
@@ -37,7 +37,7 @@ macOS / Linux / WSL：
 
 ```bash
 export ARQEL_API_KEY="sk-..."
-export ARQEL_BASE_URL="https://api.arqel.dev/v1"
+export ARQEL_BASE_URL="https://arqel.net"
 export ARQEL_MODEL="<从 Arqel 控制台复制的模型名>"
 ```
 
@@ -45,7 +45,7 @@ Windows PowerShell：
 
 ```powershell
 $env:ARQEL_API_KEY="sk-..."
-$env:ARQEL_BASE_URL="https://api.arqel.dev/v1"
+$env:ARQEL_BASE_URL="https://arqel.net"
 $env:ARQEL_MODEL="<从 Arqel 控制台复制的模型名>"
 ```
 
@@ -53,7 +53,7 @@ Windows 长期设置：
 
 ```powershell
 setx ARQEL_API_KEY "sk-..."
-setx ARQEL_BASE_URL "https://api.arqel.dev/v1"
+setx ARQEL_BASE_URL "https://arqel.net"
 setx ARQEL_MODEL "<从 Arqel 控制台复制的模型名>"
 ```
 
@@ -69,7 +69,7 @@ setx ARQEL_MODEL "<从 Arqel 控制台复制的模型名>"
 
 ```text
 ARQEL_API_KEY=sk-...
-ARQEL_BASE_URL=https://api.arqel.dev/v1
+ARQEL_BASE_URL=https://arqel.net
 ARQEL_MODEL=<从 Arqel 控制台复制的模型名>
 ```
 

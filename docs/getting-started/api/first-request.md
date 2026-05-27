@@ -2,7 +2,7 @@
 
 这页不是新手入门入口。
 
-如果你想使用 Cursor、Claude Code、Gemini CLI、Codex 或 CC Switch，请从 [新手入门](/getting-started/agent-quickstart) 开始。
+如果你想使用 Cursor、Claude Code、Codex 或 CC Switch，请从 [新手入门](/getting-started/agent-quickstart) 开始。
 
 API 调用示例现在放在 API 参考区：
 

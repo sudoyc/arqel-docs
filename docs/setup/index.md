@@ -1,15 +1,15 @@
 # 环境准备总览
 
-这页告诉你用 Cursor、Claude Code、Gemini CLI、Codex、CC Switch 等工具之前，电脑需要准备到什么程度。接 Agent、接 SDK、调试 API，所需环境不一样。
+这页告诉你用 Cursor、Claude Code、Codex、CC Switch 等工具之前，电脑需要准备到什么程度。接 Agent、接 SDK、调试 API，所需环境不一样。
 
 如果你几乎没有编程基础，优先按 [新手入门](/getting-started/agent-quickstart) 走。环境页只解释电脑、终端和配置位置，不替代具体工具教程。
 
 ## 接 Agent 需要什么
 
-如果你要用 Cursor、Claude Code、Gemini CLI、Codex 或 CC Switch，通常需要：
+如果你要用 Cursor、Claude Code、Codex 或 CC Switch，通常需要：
 
 - **浏览器**：登录 Arqel 控制台，复制 API Key、Base URL 和模型名。
-- **一个 Agent 工具**：例如 Cursor、Claude Code、Gemini CLI、Codex，或用 CC Switch 管理多个 Agent。
+- **一个 Agent 工具**：例如 Cursor、Claude Code、Codex，或用 CC Switch 管理多个 Agent。
 - **终端或编辑器**：CLI Agent 需要终端；Cursor 主要在编辑器设置里配置。
 
 不同 Agent 的安装要求不同。不要一开始把所有工具都装上，先选一个工具完成接入。
@@ -23,7 +23,7 @@
 接入 SDK、CLI Agent 或编辑项目时，通常还会用到：
 
 - **Node.js**：很多 AI 命令行工具依赖它运行。
-- **npm**：Node.js 自带的软件包安装器，一些 AI CLI 会用它安装，例如 Gemini CLI 或 Codex CLI。
+- **npm**：Node.js 自带的软件包安装器，一些 AI CLI 会用它安装，例如 Codex CLI。
 - **Git**：代码版本管理工具，用来查看修改、回滚、提交。
 - **VS Code**：编辑器，用来打开项目、安装插件、配合 Agent 工作。
 
@@ -33,12 +33,12 @@
 
 | 名词 | 可以理解成 | 例子 |
 | --- | --- | --- |
-| 软件包 | 可以安装的小工具或程序 | `@google/gemini-cli` |
+| 软件包 | 可以安装的小工具或程序 | `@openai/codex` |
 | 包管理器 | 帮你下载、安装、更新软件包的工具 | npm、Homebrew、winget |
-| CLI | 需要在终端里输入命令使用的工具 | `gemini`、`claude`、`codex` |
+| CLI | 需要在终端里输入命令使用的工具 | `claude`、`codex` |
 | 环境变量 | 存在电脑里的配置值，程序运行时会读取 | `ARQEL_API_KEY` |
 | API Key | 访问 Arqel API 的钥匙 | `sk-...` |
-| Base URL | API 请求要发往的地址 | `https://api.arqel.dev/v1` |
+| Base URL | API 请求要发往的地址 | `https://arqel.net` |
 
 你不需要一次理解所有概念。先按步骤安装和验证，后面遇到具体工具时会反复用到。
 
@@ -62,7 +62,6 @@
 | `git --version` | `git version ...` |
 | `code --version` | VS Code 版本号 |
 | `claude --version` | Claude Code 版本号 |
-| `gemini --version` | Gemini CLI 版本号 |
 | `codex --version` | Codex CLI 版本号 |
 
 如果提示“命令找不到”，通常不是你输错了，而是软件没有安装好，或者安装后的路径还没有被终端识别。先关闭终端重新打开，再验证一次。

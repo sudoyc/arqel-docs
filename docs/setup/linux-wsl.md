@@ -83,7 +83,6 @@ code .
 
 ```bash
 npm install -g @anthropic-ai/claude-code
-npm install -g @google/gemini-cli
 npm install -g @openai/codex
 ```
 
@@ -91,7 +90,6 @@ npm install -g @openai/codex
 
 ```bash
 claude --version
-gemini --version
 codex --version
 ```
 
@@ -101,7 +99,7 @@ codex --version
 
 ```bash
 export ARQEL_API_KEY="sk-..."
-export ARQEL_BASE_URL="https://api.arqel.dev/v1"
+export ARQEL_BASE_URL="https://arqel.net"
 ```
 
 临时 `export` 只对当前 WSL 终端有效，适合短时间测试。关闭窗口后变量会消失。
@@ -111,7 +109,7 @@ export ARQEL_BASE_URL="https://api.arqel.dev/v1"
 ```bash
 cat >> ~/.bashrc <<'EOF'
 export ARQEL_API_KEY="sk-..."
-export ARQEL_BASE_URL="https://api.arqel.dev/v1"
+export ARQEL_BASE_URL="https://arqel.net"
 EOF
 
 source ~/.bashrc

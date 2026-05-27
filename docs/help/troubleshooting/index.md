@@ -43,7 +43,7 @@
 - CC Switch 写入的配置是否作用于正在运行的工具。
 - 工具是否需要重启、Reload Window 或重新打开终端。
 
-不要把 Cursor、Claude Code、Gemini CLI、Codex、Hermes Agent 的配置方式互相套用。
+不要把 Cursor、Claude Code、Codex、Hermes Agent 的配置方式互相套用。
 
 API 调用示例只用于后端、脚本、SDK 或深度排障。新手接 Agent 时，优先在 Agent 里做只读测试，再看 Arqel 控制台记录。
 
